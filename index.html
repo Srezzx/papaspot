@@ -16,6 +16,51 @@
     </script>
 
     <style>
+        /* .card-custom {
+            overflow: hidden;
+            min-height: 450px;
+            box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+        }
+
+        .card-custom-img {
+            height: 200px;
+            min-height: 200px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-color: inherit;
+        }
+
+        /* First border-left-width setting is a fallback 
+        .card-custom-img::after {
+            position: absolute;
+            content: '';
+            top: 161px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-top-width: 40px;
+            border-right-width: 0;
+            border-bottom-width: 0;
+            border-left-width: 545px;
+            border-left-width: calc(575px - 5vw);
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: inherit;
+        }
+
+        .card-custom-avatar img {
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+            position: absolute;
+            top: 100px;
+            left: 1.25rem;
+            width: 100px;
+            height: 100px;
+        } */
+
         .carousel-item {
             height: 65vh;
             min-height: 350px;
@@ -25,12 +70,40 @@
             -o-background-size: cover;
             background-size: cover;
         }
+
+        a.navbar-brand {
+            color: white;
+        }
+
+        li.nav-item>a {
+            color: white;
+        }
+
+        hr.style-one {
+            border: 0;
+            height: 1px;
+            background: #333;
+            background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+            background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+            background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+            background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+        }
+
+        .btn-1 {
+            background-color: burlywood;
+            padding: 10px 60px 10px 60px;
+            color: white;
+        }
+
+        a.btn-1 {
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Papaspot</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -103,16 +176,24 @@
         </div>
     </header>
 
-    <!-- Page Content -->
-    <section class="py-5">
-        <div class="container">
-            <h1 class="font-weight-light">Papaspot carousel</h1>
-            <p class="lead">More content is to be added</p>
+    <div class="pt-5 pb-3 container">
+        <div class="row">
+            <div class="col-lg-6 col-md-4 col-xs-12">
+                <h4>Bored? Hungry? Don't Worry, WE are here!!</h4>
+                <hr class="style-one">
+                <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book.</p>
+                <div class="mt-4 form-group">
+                    <a href="#" class="btn-1">Go</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <img src="images/480x360.png" class="img-responsive" alt="demo">
+            </div>
         </div>
-    </section>
+    </div>
 
 </body>
-
-
 
 </html>
