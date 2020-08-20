@@ -1,16 +1,10 @@
-.section-1 {
-    background-image: url(images/back-2.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-}
-
 .btn-1 {
     background-color: #E67E22;
     padding: 10px 60px 10px 60px;
     color: white;
-    border-radius: 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 2rem;
 }
 
 .btn-1:hover {
@@ -28,9 +22,14 @@ a.btn-1 {
     height: auto;
     border-radius: 0;
     margin-left: 6rem;
-
 }
 
 .div-img-1 {
     margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-1 {
+        margin-left: 2rem;
+    }
 }

@@ -32,7 +32,6 @@
 
 .text {
     color: white;
-    font-size: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -40,6 +39,10 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     white-space: nowrap;
+}
+
+.text p {
+    font-size: 1.5rem;
 }
 
 .meal-photo:hover .overlay {
@@ -74,4 +77,37 @@
     width: 0;
     height: 100%;
     transition: .5s ease;
+}
+
+
+.btn-3 {
+
+    background-color: transparent;
+    color: #E67E22;
+    border: 1px #E67E22 solid;
+}
+
+
+.btn-3:hover {
+    background-color: #E67E22;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .meals-showcase li {
+        display: block;
+        float: left;
+        width: 50%;
+    }
+
+    .text p {
+        font-size: 0.8rem;
+    }
+
+    .btn-3 {
+        padding: 4px 8px;
+        margin-bottom: 0;
+        font-size: 11px;
+    }
+
 }
