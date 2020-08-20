@@ -1,0 +1,36 @@
+.section-1 {
+    background-image: url(images/back-2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.btn-1 {
+    background-color: #E67E22;
+    padding: 10px 60px 10px 60px;
+    color: white;
+    border-radius: 30px;
+}
+
+.btn-1:hover {
+    background-color: #f78825;
+    color: #f6f6f6;
+    transition: 0.5s;
+}
+
+a.btn-1 {
+    text-decoration: none;
+}
+
+.img-1 {
+    width: 80%;
+    height: auto;
+    border-radius: 0;
+    margin-left: 6rem;
+
+}
+
+.div-img-1 {
+    margin: 0 auto;
+}

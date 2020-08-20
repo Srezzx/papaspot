@@ -1,0 +1,70 @@
+/* Font style -1 */
+h1.flicker-orange {
+    font-size: calc(20px + 5vh);
+    line-height: calc(20px + 3vh);
+    text-shadow: 0 0 1px #ffa500, 0 0 3px #ffa500, 0 0 4px #ffa500, 0 0 8px #ffa500, 0 0 2px #ff8d00;
+    color: #f35730;
+    font-family: "Sacramento", cursive;
+    text-align: center;
+    animation: blink 6s infinite;
+    -webkit-animation: blink 6s infinite;
+}
+
+.div-flicker-orange {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@-webkit-keyframes blink {
+
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        text-shadow: 0 0 1px #ffa500, 0 0 3px #ffa500, 0 0 4px #ffa500, 0 0 8px #ffa500, 0 0 2px #ff8d00;
+        color: #f35730;
+    }
+}
+
+@keyframes blink {
+
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        text-shadow: 0 0 1px #ffa500, 0 0 3px #ffa500, 0 0 4px #ffa500, 0 0 8px #ffa500, 0 0 2px #ff8d00;
+        color: #f35730;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Sacramento', 'cursive';
+}

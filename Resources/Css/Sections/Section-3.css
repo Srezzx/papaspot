@@ -1,0 +1,77 @@
+.section-meals {
+    padding: 0;
+    margin: 0;
+}
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-photo {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+.meal-photo img {
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.5s;
+    transition: transform 0.2s, opacity 0.5s;
+}
+
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.meal-photo:hover .overlay {
+    width: 100%;
+}
+
+.meal-photo:hover .overlay-2 {
+    width: 100%;
+    left: 0;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 140, 186, 0.8);
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+
+}
+
+.overlay-2 {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: rgb(0, 140, 186, 0.9);
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}

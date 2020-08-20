@@ -1,0 +1,10 @@
+.btn-section-2-mid {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.btn-section-2-mid:hover {
+    background-color: transparent;
+    color: #5cb85c;
+    border: 1px #5cb85c solid;
+}

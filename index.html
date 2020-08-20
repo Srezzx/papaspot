@@ -5,6 +5,9 @@
     <title>Papaspot</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="Resources/Css/default.css">
+    <link rel="stylesheet" type="text/css" href="Resources/Css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="Resources/Css/Sections/FullSections.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -12,15 +15,13 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Codystar:300&display=swap');
         @import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+
 
         body {
             font-family: 'Lato', 'Arial', sans-serif !important;
@@ -120,126 +121,21 @@
             background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
             background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
             width: 50%;
-        }
-
-        .btn-1 {
-            background-color: #E67E22;
-            padding: 10px 60px 10px 60px;
-            color: white;
-            border-radius: 30px;
-        }
-
-        .btn-1:hover {
-            background-color: #f78825;
-            color: #f6f6f6;
-            transition: 0.5s;
-        }
-
-        a.btn-1 {
-            text-decoration: none;
-        }
-
-        .img-1 {
-            width: 80%;
-            height: auto;
-            margin-left: 2rem;
-
-        }
-
-        .div-img-1 {
-            margin: 0 auto;
+            margin-bottom: 5rem;
         }
 
 
 
-        h1.flicker-orange {
-            font-size: calc(20px + 5vh);
-            line-height: calc(20px + 3vh);
-            /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
-  color: #fccaff; */
-            text-shadow: 0 0 1px #ffa500, 0 0 3px #ffa500, 0 0 4px #ffa500, 0 0 8px #ffa500, 0 0 2px #ff8d00;
-            color: #f35730;
-            font-family: "Sacramento", cursive;
-            text-align: center;
-            animation: blink 6s infinite;
-            -webkit-animation: blink 6s infinite;
-        }
-
-        .div-flicker-orange {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        @-webkit-keyframes blink {
-
-            20%,
-            24%,
-            55% {
-                color: #111;
-                text-shadow: none;
-            }
-
-            0%,
-            19%,
-            21%,
-            23%,
-            25%,
-            54%,
-            56%,
-            100% {
-                /*     color: #fccaff;
-    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
-                text-shadow: 0 0 1px #ffa500, 0 0 3px #ffa500, 0 0 4px #ffa500, 0 0 8px #ffa500, 0 0 2px #ff8d00;
-                color: #f35730;
-            }
-        }
-
-        @keyframes blink {
-
-            20%,
-            24%,
-            55% {
-                color: #111;
-                text-shadow: none;
-            }
-
-            0%,
-            19%,
-            21%,
-            23%,
-            25%,
-            54%,
-            56%,
-            100% {
-                /*     color: #fccaff;
-    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
-                text-shadow: 0 0 1px #ffa500, 0 0 3px #ffa500, 0 0 4px #ffa500, 0 0 8px #ffa500, 0 0 2px #ff8d00;
-                color: #f35730;
-            }
-        }
 
         * {
             box-sizing: border-box;
         }
 
-        .btn-section-2-mid {
-            background-color: #5cb85c;
-            color: white;
-        }
-
-        .btn-section-2-mid:hover {
-            background-color: transparent;
-            color: #5cb85c;
-            border: 1px #5cb85c solid;
-        }
 
         /* To remove horizontal scroll due to row/navbar */
         .row {
             margin-right: 0;
+            padding: 0;
         }
 
         li.navbar-nav {
@@ -259,82 +155,27 @@
             padding-bottom: 5rem;
         }
 
-
-
-        .neons {
-            text-align: center;
-        }
-
-        .neons h1 {
-            font-size: 2.5rem;
-            text-align: center;
-            font-weight: bold;
-            -webkit-animation: glow 2s ease-in-out infinite alternate;
-            -moz-animation: glow 2s ease-in-out infinite alternate;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @-webkit-keyframes glow {
-            from {
-                color: #fff;
-                text-shadow: 0 0 1px #f35730, 0 0 2px #f35730, 0 0 30px #f35730, 0 0 4px #f35730, 0 0 5px #f35730, 0 0 60px #f35730, 0 0 7px #f35730, 0 0 9px #f35730;
-            }
-
-            to {
-                color: #ff8161;
-                text-shadow: 0 0 2px #f35730, 0 0 3px #f35730, 0 0 4px #f35730, 0 0 5px #f35730, 0 0 6px #f35730, 0 0 7px #f35730, 0 0 8px #f35730, 0 1 9px #f35730;
-            }
-        }
-
-        @keyframes glow {
-            from {
-                color: #fff;
-                text-shadow: 0 0 1px #f35730, 0 0 2px #f35730, 0 0 30px #f35730, 0 0 4px #f35730, 0 0 5px #f35730, 0 0 60px #f35730, 0 0 7px #f35730, 0 0 9px #f35730;
-            }
-
-            to {
-                color: #ff8161;
-                text-shadow: 0 0 2px #f35730, 0 0 3px #f35730, 0 0 4px #f35730, 0 0 5px #f35730, 0 0 6px #f35730, 0 0 7px #f35730, 0 0 8px #f35730, 0 1 9px #f35730;
-            }
-        }
-
-        .section-meals {
-            padding: 0;
-            margin: 0;
-        }
-
-        .meals-showcase {
-            list-style: none;
-            width: 100%;
-        }
-
-        .meals-showcase li {
-            display: block;
-            float: left;
-            width: 25%;
-        }
-
-        .meal-photo {
-            width: 100%;
-            margin: 0;
-            overflow: hidden;
-            background-color: #000;
-        }
-
-        .meal-photo img {
-            opacity: 1;
-            width: 100%;
-            height: auto;
-            border-radius: 0;
-            -webkit-transition: -webkit-transform 0.2s, opacity 0.5s;
-            transition: transform 0.2s, opacity 0.5s;
-        }
-
-        .text {
-            background-color: #4CAF50;
+        .btn-section-2-mid {
+            background-color: #5cb85c;
             color: white;
-            font-size: 16px;
-            padding: 16px 32px;
+        }
+
+        .btn-section-2-mid:hover {
+            background-color: transparent;
+            color: #5cb85c;
+            border: 1px #5cb85c solid;
+        }
+
+        .btn-3 {
+
+            background-color: transparent;
+            color: #E67E22;
+            border: 1px #E67E22 solid;
+        }
+
+        .btn-3:hover {
+            background-color: #E67E22;
+            color: white;
         }
     </style>
 </head>
@@ -372,6 +213,7 @@
             </div>
         </div>
     </nav>
+
 
     <header>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -415,29 +257,29 @@
         </div>
     </header>
 
-
     <!-- Section 1 -->
     <section class="section-1 ">
         <div class=" container">
             <div class="row justify-content-center">
-                <h4 style="font-family: 'Lato' , 'Arial' , sans-serif;">BORED? HUNGRY? DON'T WORRY, WE GOT
-                    YOU COVERED!!
-                </h4>
+                <h3>Bored? Hungry? Don't Worry, we got you covered
+                </h3>
             </div>
-            <hr style="margin-bottom:3rem; width:50%;" class=" style-one">
-            <div class="row justify-content-center align-items-start">
+            <hr style=" width:50%;" class=" style-one">
+            <div class="row d-flex  justify-content-center align-items-center">
                 <div class="col-md-6  col-xs-12">
-                    <p style="font-family: 'Lato', 'Arial', sans-serif;color: #555;" class="lead">
-                        VIT is surrounded by places to hang out. But which one is the best? Which one would you like?
+                    <p style="max-width:480px;font-family: 'Lato', 'Arial', sans-serif;color: #555;" class="lead">
+                        VIT is surrounded by places to hang out. But which one is the best? Which one would you
+                        like?
                         It is really confusing to choose perfect places for each different occasions.
-                        Sometimes you need to take a break from the hectic life of college and go for a bite or to
+                        Sometimes you need to take a break from the hectic life of college and go for a bite or
+                        to
                         gaming
                         zone to free our minds from the tension. Proceed and have a look </p>
                     <div class="mt-4 form-group">
                         <a href="#" class="btn-1">Go</a>
                     </div>
                 </div>
-                <div class="div-img-1 col-md-6 col-xs-12">
+                <div class=" div-img-1 col-md-6 col-xs-12">
                     <img src="images/480x360.png" class="img-1 img-responsive" alt="demo">
                 </div>
             </div>
@@ -449,14 +291,12 @@
 
 
     <section class=" section-2">
-        <div class="pb-5 row">
+        <div class="row">
             <div class="col-12">
-                <!-- <h3 style="color:orange; text-align:center ;font-family: 'Lato', 'Arial', sans-serif;">Most Trending!!
-                </h3> -->
                 <div class="div-flicker-orange">
                     <h1 class="flicker-orange">Trending</h1>
                 </div>
-                <hr style="width:25%;" class="style-one">
+                <hr style="padding-bottom:0.10px;width:25%;" class=" style-one">
             </div>
         </div>
 
@@ -534,37 +374,61 @@
 
 
 
-    <section class="section-3">
-        <div class="container">
-            <div class="row">
-                <div class="neons col-12">
-                    <h1 style="font-family: 'Codystar';"><em>Looking for Something inside the campus?</em></h1>
-                    <hr class="style-one">
-                </div>
-            </div>
+    <section class=" section-3 section-meals">
+        <div class="row justify-content-center">
+            <h1>Looking for Something inside the campus?</h1>
         </div>
-    </section>
-
-    <section class="section-meals">
+        <hr class="style-one">
         <ul class="meals-showcase clearfix">
             <li>
                 <figure class="meal-photo">
                     <img src="images/4.jpg" alt="Korean bibimbap with egg and vegetables">
+                    <div class="overlay">
+
+                        <div class="text">
+                            <p>Namma Chai</p>
+                            <a href="#" class="btn btn-3">More Details</a>
+                        </div>
+                    </div>
+                    </div>
                 </figure>
             </li>
             <li>
                 <figure class="meal-photo">
                     <img src="images/3.jpg" alt="Simple italian pizza with cherry tomatoes">
+                    <div class="overlay">
+
+                        <div class="text">
+                            <p>SJT Cafeteria</p><a href="#" class="btn btn-3">More Details</a>
+                        </div>
+                    </div>
+                    </div>
                 </figure>
             </li>
             <li>
                 <figure class="meal-photo">
                     <img src="images/2.jpg" alt="Chicken breast steak with vegetables">
+                    <div class="overlay-2">
+
+                        <div class="text">
+                            <p>Fc Cafeteria</p>
+                            <a href="#" class="btn btn-3">More Details</a>
+                        </div>
+                    </div>
+                    </div>
                 </figure>
             </li>
             <li>
                 <figure class="meal-photo">
                     <img src="images/1.jpg" alt="Autumn pumpkin soup">
+                    <div class="overlay-2">
+
+                        <div class="text">
+                            <p>Dc Cafeteria</p><a href="#" class="btn btn-3">More Details</a>
+                        </div>
+
+                    </div>
+                    </div>
                 </figure>
             </li>
         </ul>
