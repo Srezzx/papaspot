@@ -4,6 +4,7 @@
 <head>
     <title>Papaspot</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,8 +19,30 @@
     <style>
         body {
             font-family: 'Lato', 'Arial', sans-serif !important;
+
         }
 
+        /* Stops navbar causeing horizontal scroll */
+        .navbar-nav {
+            margin: 0;
+            padding: 0px 0px;
+
+        }
+
+        div.carouselcaption>p.lead {
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .display-4 {
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .card:hover {
+            width: 101%;
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        }
 
         .carousel-item {
             height: 65vh;
@@ -40,7 +63,48 @@
             color: white;
             font-size: 1.2rem;
             margin-left: 10px;
+            text-shadow: 2px 2px 5px black;
+            padding-left: 3.8rem;
         }
+
+        li.nav-item>a:hover {
+            transition: 0.5s;
+            color: wheat;
+            border-radius: 5px;
+        }
+
+        img {
+            border-radius: 5px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                background: rgb(255, 255, 255, 0.3);
+            }
+
+            h4 {
+                font-size: 0.7rem;
+                font-weight: 550;
+                font-style: italic;
+            }
+
+            li.nav-item>a {
+                color: white;
+                font-size: 1.2rem;
+                margin-left: 10px;
+                text-shadow: 2px 2px 5px black;
+                padding-left: 3.8rem;
+            }
+
+            li.nav-item>a:hover {
+                padding-left: 4rem;
+                transition: 0.5s;
+                line-height: 2rem;
+                border-radius: 5px;
+
+            }
+        }
+
 
         hr.style-one {
             border: 0;
@@ -50,6 +114,7 @@
             background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
             background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
             background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+            width: 50%;
         }
 
         .btn-1 {
@@ -92,8 +157,8 @@
             color: #fff6a9;
             font-family: "Sacramento", cursive;
             text-align: center;
-            animation: blink 10s infinite;
-            -webkit-animation: blink 10s infinite;
+            animation: blink 6s infinite;
+            -webkit-animation: blink 6s infinite;
         }
 
         .div-flicker-orange {
@@ -152,6 +217,10 @@
             }
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         .btn-section-2-mid {
             background-color: #5cb85c;
             color: white;
@@ -162,19 +231,37 @@
             color: #5cb85c;
             border: 1px #5cb85c solid;
         }
+
+        /* To remove horizontal scroll due to row/navbar */
+        .row {
+            margin-right: 0;
+        }
+
+        li.navbar-nav {
+            text-shadow: 2px 2px 5px red;
+        }
+
+        .section-1-div {
+            background-image: url(images/back-2.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
     </style>
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class=" navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Papaspot</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span><i class="fa fa-bars" style="color:#fff; font-size:28px;"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
+
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home
@@ -188,7 +275,7 @@
                         <a class="nav-link" href="#">Gaming</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Recreational</a>
+                        <a class="nav-link" href="#">Hills</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -239,24 +326,30 @@
             </a>
         </div>
     </header>
-
-    <div style="background-image: url('images/back-2.png')" class=" pt-5 pb-3 container">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-6  col-xs-12">
-                <h4 style="font-family: 'Lato', 'Arial', sans-serif;">BORED? HUNGRY? DON'T WORRY, WE GOT YOU COVERED!!
+    <div class="section-1-div ">
+        <div class=" pt-5 pb-5 container">
+            <div class="row justify-content-center">
+                <h4 style="font-family: 'Lato' , 'Arial' , sans-serif;">BORED? HUNGRY? DON'T WORRY, WE GOT
+                    YOU
+                    COVERED!!
                 </h4>
-                <hr class="style-one">
-                <p style="font-family: 'Lato', 'Arial', sans-serif;color: #555;" class="lead">
-                    VIT is surrounded by places to hang out. But which one is the best? Which one would you like?
-                    It is really confusing to choose perfect places for each different occasions.
-                    Sometimes you need to take a break from the hectic life of college and go for a bite or to gaming
-                    zone to free our minds from the tension. Proceed and have a look </p>
-                <div class="mt-4 form-group">
-                    <a href="#" class="btn-1">Go</a>
-                </div>
             </div>
-            <div class="div-img-1 col-md-6 col-xs-12">
-                <img src="images/480x360.png" class="img-1 img-responsive" alt="demo">
+            <hr style="margin-bottom:3rem; width:50%;" class=" style-one">
+            <div class="row justify-content-center align-items-start">
+                <div class="col-md-6  col-xs-12">
+                    <p style="font-family: 'Lato', 'Arial', sans-serif;color: #555;" class="lead">
+                        VIT is surrounded by places to hang out. But which one is the best? Which one would you like?
+                        It is really confusing to choose perfect places for each different occasions.
+                        Sometimes you need to take a break from the hectic life of college and go for a bite or to
+                        gaming
+                        zone to free our minds from the tension. Proceed and have a look </p>
+                    <div class="mt-4 form-group">
+                        <a href="#" class="btn-1">Go</a>
+                    </div>
+                </div>
+                <div class="div-img-1 col-md-6 col-xs-12">
+                    <img src="images/480x360.png" class="img-1 img-responsive" alt="demo">
+                </div>
             </div>
         </div>
     </div>
@@ -269,25 +362,31 @@
                 <div class="div-flicker-orange">
                     <h1 class="flicker-orange">Trending</h1>
                 </div>
+                <hr style="width:25%;" class="style-one">
             </div>
         </div>
 
-        <section id="gallery">
+        <section style="background-color: #F7F7F7;" id="gallery" class="pt-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-4 mb-4 ">
                         <div class="card">
                             <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
                                 alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 style="font-family: 'Lato', 'Arial', sans-serif" class="card-title">Turf XL</h5>
-                                <p style="color: #555;font-family: 'Lato', 'Arial', sans-serif" class="card-text">Lorem
-                                    ipsum dolor
-                                    sit amet consectetur, adipisicing elit. Ut eum
-                                    similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore
-                                    modi
-                                    dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
-                                <a href="" class="btn btn-outline-success btn-sm">More Details</a>
+                            <div style="padding:0;" class="card-body">
+                                <div style="margin:0; padding:1rem 0 0 0rem ;" class="card-header">
+                                    <h5 style="text-align:center;font-family: 'Lato', 'Arial', sans-serif"
+                                        class="card-title">Turf XL</h5>
+                                </div>
+                                <!-- <p style="color: #555;font-family: 'Lato', 'Arial', sans-serif" class="card-text"></p> -->
+                                <ul style="margin:0;" class=" list-group list-group-flush">
+                                    <li class="list-group-item">Oepn Hours: 11:00 AM - 8:00 PM</li>
+                                    <li class="list-group-item">Rs.800 for 2 people</li>
+                                    <li class="mb-4 list-group-item">ETA-5 mins from VIT Vellore</li>
+                                </ul>
+                                <div style="margin:0;padding:0 0 1rem 0;" class="row justify-content-center">
+                                    <a href="" class="btn btn-sm btn-outline-success ">More Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -295,15 +394,20 @@
                         <div class="card">
                             <img src="https://images.unsplash.com/photo-1516214104703-d870798883c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60"
                                 alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 style="font-family: 'Lato', 'Arial', sans-serif" class="card-title">Tara Maa</h5>
-                                <p style="color: #555; font-family: 'Lato', 'Arial', sans-serif" class="card-text">Lorem
-                                    ipsum dolor
-                                    sit amet consectetur, adipisicing elit. Ut eum
-                                    similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore
-                                    modi
-                                    dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
-                                <a href="" class="btn btn-sm btn-section-2-mid">More Details</a>
+                            <div style="padding:0;" class="card-body">
+                                <div style="margin:0; padding:1rem 0 0 0rem ;" class="card-header">
+                                    <h5 style="text-align:center;font-family: 'Lato', 'Arial', sans-serif"
+                                        class="card-title">Gamer's Paradise</h5>
+                                </div>
+                                <!-- <p style="color: #555;font-family: 'Lato', 'Arial', sans-serif" class="card-text"></p> -->
+                                <ul style="margin:0;" class=" list-group list-group-flush">
+                                    <li class="list-group-item">Oepn Hours: 11:00 AM - 8:00 PM</li>
+                                    <li class="list-group-item">Rs.600 for 2 people</li>
+                                    <li class="mb-4 list-group-item">ETA-10 mins from VIT Vellore</li>
+                                </ul>
+                                <div style="margin:0;padding:0 0 1rem 0;" class=" row justify-content-center">
+                                    <a href="" class="btn btn-sm btn-section-2-mid">More Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -311,16 +415,20 @@
                         <div class="card">
                             <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
                                 alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 style="font-family: 'Lato', 'Arial', sans-serif" class="card-title">Gamer's Paradise
-                                </h5>
-                                <p style="color: #555;font-family: 'Lato', 'Arial', sans-serif" class="card-text">Lorem
-                                    ipsum dolor
-                                    sit amet consectetur, adipisicing elit. Ut eum
-                                    similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore
-                                    modi
-                                    dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
-                                <a href="" class="btn btn-outline-success btn-sm">More Details</a>
+                            <div style="padding:0;" class="card-body">
+                                <div style="margin:0; padding:1rem 0 0 0rem ;" class="card-header">
+                                    <h5 style="text-align:center;font-family: 'Lato', 'Arial', sans-serif"
+                                        class="card-title">Tara Maa</h5>
+                                </div>
+                                <!-- <p style="color: #555;font-family: 'Lato', 'Arial', sans-serif" class="card-text"></p> -->
+                                <ul style="margin:0;" class=" list-group list-group-flush">
+                                    <li class="list-group-item">Oepn Hours: 11:00 AM - 8:00 PM</li>
+                                    <li class="list-group-item">Rs.500 for 2 people</li>
+                                    <li class="mb-4 list-group-item">ETA-7 mins from VIT Vellore</li>
+                                </ul>
+                                <div style="margin:0;padding:0 0 1rem 0;" class="row justify-content-center">
+                                    <a href="" class="btn btn-sm btn-outline-success ">More Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -328,6 +436,17 @@
             </div>
         </section>
     </div>
+
+
+
+
+    <section>
+        <h1 style="text-align:center;">Looking for a day full of craziness!? </h1>
+    </section>
+
+
+
+
 
     <script>
         $(window).scroll(function () {
@@ -339,6 +458,7 @@
         });
     </script>
 </body>
+
 
 
 </html>
