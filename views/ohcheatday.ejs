@@ -1,0 +1,24 @@
+<%- include("partials/header"); %>
+
+<div class="fade">
+    <img src="images/img-1.jpg" alt="img">
+    <img src="images/img-2.jpg" alt="img">
+    <img src="images/img-3.jpg" alt="img">
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.fade').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+
+    });
+</script>
+
+<%- include("partials/footer"); %>

@@ -30,6 +30,17 @@ a.btn-1 {
 
 @media only screen and (max-width: 768px) {
     .btn-1 {
-        margin-left: 2rem;
+        margin: 0;
+        padding: 8px 40px 8px 40px;
+
+    }
+
+    .btn-1-div {
+        display: flex;
+        justify-content: center;
+    }
+
+    .section-1-p {
+        font-size: 100%;
     }
 }
