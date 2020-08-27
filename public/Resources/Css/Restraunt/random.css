@@ -5,7 +5,7 @@
 .restraunt-h2 {
     color: red;
     text-decoration: underline solid #D6D6D6;
-    padding: 1rem 0 1rem 0;
+    padding: 3rem 0 3rem 0;
 
 }
 
@@ -34,15 +34,6 @@ div.restraunt-buttons-1>a.btn {
 
 @media only screen and (max-width: 768px) {
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-        text-align: center;
-    }
 
     .restraunt-buttons-1 {
         display: flex;
@@ -89,4 +80,17 @@ hr.style-two {
 .btn-zomato {
     background-color: orangered;
     padding: 5px 80px 5px 80px;
+}
+
+
+img.restraunt-carousel-img {
+    transform: scale(1.03);
+    transition: 0.5s;
+    opacity: 0.9;
+}
+
+img.restraunt-carousel-img:hover {
+    transform: scale(1.15);
+    transition: 0.5s;
+    opacity: 1;
 }
