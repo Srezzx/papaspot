@@ -1,0 +1,92 @@
+.restraunt-section {
+    padding-top: 5rem;
+}
+
+.restraunt-h2 {
+    color: red;
+    text-decoration: underline solid #D6D6D6;
+    padding: 1rem 0 1rem 0;
+
+}
+
+.restraunt-p {
+    color: #707070;
+    line-height: 0.5rem;
+}
+
+.restraunt-btn-2 {
+    color: red;
+    display: inline;
+    background-color: white;
+    border: 1px red solid;
+    border-radius: 5px;
+}
+
+.restraunt-btn-2:hover {
+    color: white;
+    display: inline;
+    background-color: red;
+}
+
+div.restraunt-buttons-1>a.btn {
+    margin-right: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        text-align: center;
+    }
+
+    .restraunt-buttons-1 {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .btn {
+        padding: 4px 8px;
+        margin-bottom: 0;
+        font-size: 11px;
+    }
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+    width: 50%;
+    margin-bottom: 3rem;
+}
+
+.restraunt-features {
+    margin-bottom: 2rem;
+}
+
+.menu-box {
+    border: 1px black solid;
+    width: 25px;
+    height: 25px;
+}
+
+
+
+.btn-swiggy {
+    background-color: orange;
+    padding: 5px 80px 5px 80px;
+}
+
+.btn-zomato {
+    background-color: orangered;
+    padding: 5px 80px 5px 80px;
+}

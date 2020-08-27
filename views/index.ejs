@@ -1,5 +1,8 @@
 <%- include("partials/header"); %>
 
+<style>
+
+</style>
 <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -230,16 +233,6 @@
 
 
 
-<script>
-    $(window).scroll(function () {
-        if ($(window).scrollTop() >= 0 && $(window).scrollTop() < 450) {
-            $('.navbar').css('background', 'rgba(255, 255, 255, 0.15');
-        } else if ($(window).scrollTop() >= 405) {
-            $('.navbar').css('background', '#001b42');
-        } else {
-            $('.navbar').css('background', 'transparent');
-        }
-    });
-</script>
+
 
 <%- include("partials/footer"); %>

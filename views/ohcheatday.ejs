@@ -1,24 +1,248 @@
 <%- include("partials/header"); %>
 
-<div class="fade">
-    <img src="images/img-1.jpg" alt="img">
-    <img src="images/img-2.jpg" alt="img">
-    <img src="images/img-3.jpg" alt="img">
+<style>
+    body {
+        background-image: url("images/back-3.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<div class="container">
+    <section class="restraunt-section-1">
+        <div class="row align-items-start justify-content-start">
+            <div class="col-md-6 col-xs-12">
+                <h2 class="restraunt-h2">Oh Cheat Day!!</h2>
+                <p class="restraunt-p">Italian Cusine, rocking desert collection</p>
+                <p style="line-height:0.5rem;color:green">Open Now</p>
+                <p class="restraunt-p">Average Cost for 2 : Rs 700</p>
+                <p class="restraunt-p">Cash, Card and UPI accepted</p>
+                <div class="restraunt-buttons-1">
+                    <a href="#" style="color:white;display:inline;" class=" btn btn-danger">Directions</a>
+                    <a href="#" class="btn restraunt-btn-2">Share Link</a>
+                </div>
+            </div>
+            <div class=" col-md-6 col-xs-12">
+                <h2 class="restraunt-h2">Rating</h2>
+                <P>Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                        class="fa fa-star"></i><i class="fa fa-star"></i></P>
+                <p><span style="color:red;">Must Try: </span> Rissoto, Burger, Cheese pizza</p>
+            </div>
+        </div>
+        <hr style="width:100%;" class="style-two">
+        <div class="row justify-content-start restraunt-features">
+            <div class="my-3 col-md-4 col-xs-12">
+                <div style=" width:100%;height:30px;border:1px #31d451 solid;background-color:#31d451;">
+                    <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
+                        Super Clean</p>
+                </div>
+            </div>
+            <div class="my-3 col-md-4 col-xs-12">
+                <div style=" width:100%;height:30px;border:1px #322ebf solid;background-color:#322ebf;">
+                    <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
+                        Best for Wallet</p>
+                </div>
+            </div>
+            <div class="my-3 col-md-4 col-xs-12 ">
+                <div style=" width:100%;height:30px;border:1px #debd28 solid;background-color:#debd28;">
+                    <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
+                        Multi-Cusine</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="row ">
+                <div class=" div-restraunt-h2 col-md-6 col-xs-12">
+                    <h2 class="restraunt-h2">Menu</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-4 row justify-content-center">
+                    <a class="lightbox" href="#menu-1">
+                        <img class="img-responsive" src="images/menu.jpg" />
+                    </a>
+
+                </div>
+                <div class="col-4 row justify-content-center">
+                    <a class=" lightbox" href="#menu-2">
+                        <img class="img-responsive" src="images/menu.jpg" />
+                    </a>
+
+                </div>
+                <div class="col-4 row justify-content-center">
+                    <a class=" lightbox" href="#menu-3">
+                        <img class="img-responsive" src="images/img-1.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <h2 class="restraunt-h2">Directions</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-12">
+                    <iframe class="g-map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0575263075334!2d79.15125481464514!3d12.968170790858114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad470b4810b52d%3A0x87043e9f23d2fde7!2sOh%2C%20Cheat%20Day*21!5e0!3m2!1sen!2sin!4v1598441536209!5m2!1sen!2sin"
+                        width="100%" height="250px" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="row mt-3 restraunt-buttons-1 justify-content-center">
+                <div class="col-3">
+                    <h2 class="restraunt-h2">Order Online</h2>
+                </div>
+                <div class="col-3">
+                    <a href="www.swiggy.com" class="btn btn-swiggy">Swiggy</a>
+                </div>
+                <div class="col-3">
+                    <a href="www.zomato.com" class="btn btn-zomato">Zomato</a>
+                </div>
+            </div> -->
+
+        <div class="Section">
+            <h2 class="restraunt-h2">What others are saying about this place</h2>
+            <ul class="comment-section">
+
+                <li class="comment user-comment">
+
+                    <div class="info">
+                        <a href="#">Anie Silverston</a>
+                        <span>4 hours ago</span>
+                    </div>
+
+                    <a class="avatar" href="#">
+                        <img src="images/avatar/avatar_user_1.jpg" width="35" alt="Profile Avatar"
+                            title="Anie Silverston" />
+                    </a>
+
+                    <p>Great Ambience. Food is slow but delicious!!</p>
+
+                </li>
+
+                <li class="comment author-comment">
+
+                    <div class="info">
+                        <a href="#">Jack Smith</a>
+                        <span>3 hours ago</span>
+                    </div>
+
+                    <a class="avatar" href="#">
+                        <img src="images/avatar/avatar_author.jpg" width="35" alt="Profile Avatar" title="Jack Smith" />
+                    </a>
+
+                    <p>Butter Panner is a must try, very hygenic but a little expensive</p>
+
+                </li>
+
+                <li class="comment user-comment">
+
+                    <div class="info">
+                        <a href="#">Bradley Jones</a>
+                        <span>1 hour ago</span>
+                    </div>
+
+                    <a class="avatar" href="#">
+                        <img src="images/avatar/avatar_user_2.jpg" width="35" alt="Profile Avatar"
+                            title="Bradley Jones" />
+                    </a>
+
+                    <p>Suspendisse gravida sem sit amet molestie portitor?</p>
+
+                </li>
+
+                <li class="comment author-comment">
+
+                    <div class="info">
+                        <a href="#">Jack Smith</a>
+                        <span>1 hour ago</span>
+                    </div>
+
+                    <a class="avatar" href="#">
+                        <img src="images/avatar/avatar_author.jpg" width="35" alt="Profile Avatar" title="Jack Smith" />
+                    </a>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisee gravida sem sit amet
+                        molestie porttitor.</p>
+
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="section">
+            <div class="row ">
+                <div class=" div-restraunt-h2 col-md-6 col-xs-12">
+                    <h2 class="restraunt-h2">Similar Top hits</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-4  row justify-content-center">
+                    <a class="lightbox" href="/">
+                        <img class="img-responsive" src="images/menu.jpg" />
+                    </a>
+
+                </div>
+                <div class="col-4  row justify-content-center">
+                    <a class="lightbox" href="/">
+                        <img class="img-responsive" src="images/menu.jpg" />
+                    </a>
+
+                </div>
+                <div class="col-4  row justify-content-center">
+                    <a class="lightbox" href="/">
+                        <img class="img-responsive" src="images/img-1.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.fade').slick({
-            dots: true,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            cssEase: 'linear'
-        });
+<div class="lightbox-target" id="menu-1">
+    <img src="images/menu.jpg" />
+    <a class="lightbox-close" href="#"></a>
+</div>
+<div class="lightbox-target" id="menu-3">
+    <img src="images/img-1.jpg" />
+    <a class="lightbox-close" href="#"></a>
+</div>
+<div class="lightbox-target" id="menu-2">
+    <img src="images/menu.jpg" />
+    <a class="lightbox-close" href="#"></a>
+</div>
+<Script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
 
-    });
-</script>
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
 
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+</Script>
 <%- include("partials/footer"); %>
