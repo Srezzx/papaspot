@@ -58,8 +58,15 @@
             </div>
             <div class=" col-md-6 col-xs-12">
                 <h2 class="restraunt-h2 cursive">Rating</h2>
-                <P>Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fas fa-star-half"></i></P>
+
+                <p>Rating:<% for(var i=1;i<=parseInt(place.rating);i++){ %>
+
+                    <i class="fa fa-star"></i>
+                    <% } %>
+                    <% if(place.rating - parseInt(place.rating) > 0){%>
+                    <i class="fas fa-star-half"></i>
+                    <% } %>
+                </p>
                 <p><span style="color:red;">Must Try: </span><%= place.must_try %></p>
                 <p class="restraunt-p">Cusine : <%= place.cusine %></p>
 
@@ -142,9 +149,13 @@
         <div class="Section">
             <h2 class="restraunt-h2 cursive">What others are saying about this place</h2>
             <ul class="comment-section">
-                <% place.comments.forEach(function(comment){ console.log(comment);%>
+                <% var i =0 ;place.comments.forEach(function(comment){ i++;%>
+                <% if(i %2 === 0) { %>
+                <li class="comment author-comment">
+                    <%}else { %>
                 <li class="comment user-comment">
-                    <!-- author-comment for right aligned comment -->
+                    <% } %>
+
                     <div class="info">
                         <a href="#"><%= comment.author_name %></a>
                         <span><%= comment.date %></span>

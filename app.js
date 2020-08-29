@@ -41,7 +41,7 @@ app.get("/ohcheatday", function (req, res) {
 });
 
 
-app.get("/restaurants/:id", function (req, res) {
+app.get("/restaurant/:id", function (req, res) {
     Places.findById(req.params.id).populate("comments").exec(function (err, place) {
         if (err) {
             console.log(err);
@@ -65,7 +65,7 @@ app.get("/gaming/:id", function (req, res) {
     });
 });
 
-app.get("/hills/:id", function (req, res) {
+app.get("/hill/:id", function (req, res) {
     Places.findById(req.params.id).populate("comments").exec(function (err, place) {
         if (err) {
             console.log(err);
