@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@700&display=swap');
+
 /* Font style -1 */
 h1.flicker-orange {
     font-size: calc(20px + 5vh);
@@ -60,26 +62,60 @@ h1.flicker-orange {
     }
 }
 
+
+
+h1.cursive,
+h2.cursive,
+h3.cursive,
+h4.cursive,
+h5.cursive,
+h6.cursive {
+    font-family: 'Sacramento', 'cursive';
+    font-size: 300%;
+
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: 'Sacramento', 'cursive';
-    font-size: 2.5rem;
+    font-size: 20%;
+}
+
+@media only screen and (max-width: 992px) {
+
+    h1.cursive,
+    h2.cursive,
+    h3.cursive,
+    h4.cursive,
+    h5.cursive,
+    h6.cursive {
+        font-size: 190%;
+        text-align: center;
+    }
+
+    p {
+        font-size: 1rem;
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 768px) {
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
+    h1.cursive,
+    h2.cursive,
+    h3.cursive,
+    h4.cursive,
+    h5.cursive,
+    h6.cursive {
+        font-size: 170%;
+        text-align: center;
+    }
+
     p {
-        font-size: 2rem;
+        font-size: 0.8rem;
         text-align: center;
     }
 }

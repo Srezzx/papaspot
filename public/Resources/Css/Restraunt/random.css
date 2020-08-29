@@ -5,7 +5,7 @@
 .restraunt-h2 {
     color: red;
     text-decoration: underline solid #D6D6D6;
-    padding: 3rem 0 3rem 0;
+    padding: 3rem 0 1rem 0;
 
 }
 
@@ -87,6 +87,8 @@ img.restraunt-carousel-img {
     transform: scale(1.03);
     transition: 0.5s;
     opacity: 0.9;
+    width: 100%;
+    height: 100%;
 }
 
 img.restraunt-carousel-img:hover {
