@@ -14,6 +14,8 @@ var placesSchema = new mongoose.Schema({
     io_location: String,
     identity: String,
     open_timings: String,
+    crowd: String,
+    ac: String,
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comments"

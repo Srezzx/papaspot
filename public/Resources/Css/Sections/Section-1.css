@@ -1,16 +1,19 @@
 .btn-1 {
-    background-color: #E67E22;
+    background-color: #f35730;
     padding: 10px 60px 10px 60px;
     color: white;
     border-radius: 5px;
     text-decoration: none;
     margin-left: 2rem;
+    border: 1px #f35730 solid;
+
 }
 
 .btn-1:hover {
-    background-color: #f78825;
-    color: #f6f6f6;
-    transition: 0.5s;
+    background-color: transparent;
+    color: #f35730;
+    transition: 0.2s;
+    border: 1px #f35730 solid;
 }
 
 a.btn-1 {

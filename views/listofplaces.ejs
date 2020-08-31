@@ -47,8 +47,9 @@
         font-size: 24px;
         font-family: "Dosis", sans-serif;
         outline: none;
+        box-shadow: 6px 4px 10px #222;
         border: 1px black solid;
-        box-shadow: 3px 3px 5px black;
+
 
     }
 
@@ -89,10 +90,24 @@
             transform: rotateY(90deg);
         }
     }
+    }
+
+    @media only screen and (max-width: 768px) {
+        input.list-searchbar {
+            font-size: 16px;
+            width: 85%;
+        }
+
+        .ico {
+            font-size: 16px;
+        }
+    }
 
     .card {
         border: 1px transparent solid;
         position: relative;
+        border-radius: 5px;
+
     }
 
     .card:hover {
@@ -107,7 +122,7 @@
         color: grey;
         font-size: 0.9rem;
         text-align: left;
-        line-height: 0.5rem;
+        line-height: 0.2rem;
     }
 
     h6.restraunt-list-card-font {
@@ -138,24 +153,23 @@
 <div class="container">
     <div style="margin-top:10rem">
         <div class="row justify-content-center align-items-start form">
-            <span class="fas ico"></span><input placeholder="What are you looking for? " class="list-searchbar"
-                type="text">
-
+            <span class="fas ico"></span><input id="myInput" placeholder="What are you looking for? " name="searchbar"
+                class="list-searchbar" type="text">
         </div>
         <div class="row">
             <% allplaces.forEach(function(place){ 
                 if(show === place.type){ %>
-            <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-xs-12 mb-4 areatosearch">
                 <div style="padding:3%;" class="card">
                     <img style="border-radius:5px;" src="images/1.jpg" alt="" class="restraunt-list-img">
                     <div style="padding:0;" class="">
                         <div style="margin:0; padding:1rem 0 0 0rem ;" class="card-heade">
-                            <h6 class="restraunt-list-card-font"><%= place.name %></h6>
+                            <h6 class="restaurant-name restraunt-list-card-font"><%= place.name %></h6>
                             <p class="restraunt-list-card-font"><i class="restraunt-card-icon fas fa-star"></i><span
                                     style="font-size:115%;"><%= place.rating %></span>
 
                             </p>
-                            <p class="restraunt-list-card-font"><%= place.cusine %></p>
+                            <p class="cuisine restraunt-list-card-font">Cuisine : <%= place.cusine %></p>
                             <p class="restraunt-list-card-font">Near : <%= place.nearby %></p>
                         </div>
                         <form action="/<%= place.type %>/<%= place._id %>">
@@ -168,8 +182,8 @@
                     </div>
                 </div>
             </div>
+            <%  }}); %>
         </div>
-        <%  }}); %>
     </div>
 </div>
 <script>
@@ -183,6 +197,25 @@
             $(".ico").addClass("fa-minus blink");
             $(".ico").removeClass("search");
         });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#myInput").on("keyup", function () {
+            var x = 0;
+            var value = $(this).val().toLowerCase();
+            $(' div.areatosearch').css("display", "none");
+            var y = -1;
+            $("div.areatosearch").filter(function (e, f, g) {
+                y++;
+                return $(this).text().toLowerCase().indexOf(value) > -1;
+            }).show();
+            if (x === 0) {
+                //put result when no search is matched
+            }
+        })
     });
 </script>
 
