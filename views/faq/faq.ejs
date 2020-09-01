@@ -1,10 +1,15 @@
 <%- include("../partials/header"); %>
 
 <style>
+	a {
+		text-decoration: none;
+	}
+
 	.boom_poom {
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 		transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	}
+
 	.boom_poom:hover {
 		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
 			0 10px 10px rgba(0, 0, 0, 0.22);
@@ -24,13 +29,10 @@
 <section>
 	<div class="row">
 		<div class="col-md-4 p-3 text-center">
-			<div
-				class="p-5"
-				style="
+			<div class="p-5" style="
 					box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
 						0 3px 6px rgba(0, 0, 0, 0.23);
-				"
-			>
+				">
 				<h3 class="font-weight-bold">Want to ask a question ?</h3>
 				<p>
 					Just click on the button below, and our VIT life experts
@@ -39,23 +41,13 @@
 				<br />
 				<br />
 				<div class="form_here">
-					<iframe
-						class="form_here"
+					<iframe class="form_here"
 						src="https://docs.google.com/forms/d/e/1FAIpQLSelBPzkZ_FEaEe1o7g_6T_Y1OS0joWt2WGUtZYoOXurcg35Gg/viewform?embedded=true"
-						width="100%"
-						height="400px"
-						frameborder="0"
-						marginheight="0"
-						marginwidth="0"
-					>
+						width="100%" height="400px" frameborder="0" marginheight="0" marginwidth="0">
 						Loading…
 					</iframe>
 				</div>
-				<span
-					onclick="showForm()"
-					class="p-4 m-3 boom_poom"
-					style="font-size: 3rem; border-radius: 50%"
-				>
+				<span onclick="showForm()" class="p-4 m-3 boom_poom" style="font-size: 3rem; border-radius: 50%">
 					👂
 				</span>
 				<br />
@@ -63,43 +55,27 @@
 				<br />
 				<br />
 				<br />
-				<small
-					>We do not ask for any identity, so go crazy with your
-					questions.</small
-				>
+				<small>We do not ask for any identity, so go crazy with your
+					questions.</small>
 			</div>
 		</div>
 		<div class="col-md-8 pt-3">
-			<div
-				style="
+			<div style="
 					box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
 						0 3px 6px rgba(0, 0, 0, 0.23);
-				"
-				class="accordion"
-				id="accordionExample"
-			>
+				" class="accordion" id="accordionExample">
 				<div class="card">
 					<div class="card-header" id="headingOne">
 						<h2 class="mb-0">
-							<button
-								class="btn btn-link btn-block text-left"
-								type="button"
-								data-toggle="collapse"
-								data-target="#collapseOne"
-								aria-expanded="true"
-								aria-controls="collapseOne"
-							>
+							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+								data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 								A sexy ass question goes here
 							</button>
 						</h2>
 					</div>
 
-					<div
-						id="collapseOne"
-						class="collapse show"
-						aria-labelledby="headingOne"
-						data-parent="#accordionExample"
-					>
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+						data-parent="#accordionExample">
 						<div class="card-body">
 							Anim pariatur cliche reprehenderit, enim eiusmod
 							high life accusamus terry richardson ad squid. 3
@@ -120,24 +96,14 @@
 				<div class="card">
 					<div class="card-header" id="headingTwo">
 						<h2 class="mb-0">
-							<button
-								class="btn btn-link btn-block text-left collapsed"
-								type="button"
-								data-toggle="collapse"
-								data-target="#collapseTwo"
-								aria-expanded="false"
-								aria-controls="collapseTwo"
-							>
+							<button class="btn btn-link btn-block text-left collapsed" type="button"
+								data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+								aria-controls="collapseTwo">
 								A sexy ass question goes here
 							</button>
 						</h2>
 					</div>
-					<div
-						id="collapseTwo"
-						class="collapse"
-						aria-labelledby="headingTwo"
-						data-parent="#accordionExample"
-					>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 						<div class="card-body">
 							Anim pariatur cliche reprehenderit, enim eiusmod
 							high life accusamus terry richardson ad squid. 3
@@ -158,24 +124,15 @@
 				<div class="card">
 					<div class="card-header" id="headingThree">
 						<h2 class="mb-0">
-							<button
-								class="btn btn-link btn-block text-left collapsed"
-								type="button"
-								data-toggle="collapse"
-								data-target="#collapseThree"
-								aria-expanded="false"
-								aria-controls="collapseThree"
-							>
+							<button class="btn btn-link btn-block text-left collapsed" type="button"
+								data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+								aria-controls="collapseThree">
 								A sexy ass question goes here
 							</button>
 						</h2>
 					</div>
-					<div
-						id="collapseThree"
-						class="collapse"
-						aria-labelledby="headingThree"
-						data-parent="#accordionExample"
-					>
+					<div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+						data-parent="#accordionExample">
 						<div class="card-body">
 							Anim pariatur cliche reprehenderit, enim eiusmod
 							high life accusamus terry richardson ad squid. 3

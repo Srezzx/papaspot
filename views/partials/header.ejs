@@ -1,69 +1,77 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Papaspot</title>
-		<meta charset="utf-8" />
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-		<script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-		/>
-		<script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-			crossorigin="anonymous"
-		/>
-		<script
-			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-			crossorigin="anonymous"
-		></script>
-		<link rel="stylesheet" type="text/css" href="/Resources/Css/main.css" />
-		<link rel="stylesheet" href="/Resources/Css/gyms/gyms.css" />
-		<style>
-			body {
-				font-family: "Lato", "Arial", sans-serif !important;
-			}
 
-			/* Stops navbar horizontal scroll */
-			.navbar-nav {
-				margin: 0;
-				padding: 0px 0px;
-			}
+<head>
+	<title>Papaspot</title>
+	<meta charset="utf-8" />
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
+	<link rel="stylesheet" type="text/css" href="/Resources/Css/main.css" />
+	<link rel="stylesheet" href="/Resources/Css/gyms/gyms.css" />
+	<style>
+		body {
+			font-family: "Lato", "Arial", sans-serif !important;
+		}
 
-			div.carouselcaption > p.lead {
-				text-shadow: 2px 2px 5px black;
-			}
+		/* Stops navbar horizontal scroll */
+		.navbar-nav {
+			margin: 0;
+			padding: 0px 0px;
+		}
 
-			.display-4 {
-				text-shadow: 2px 2px 5px black;
-			}
+		div.carouselcaption>p.lead {
+			text-shadow: 2px 2px 5px black;
+		}
 
-			.carousel-item {
-				height: 65vh;
-				min-height: 350px;
-				background: no-repeat center center scroll;
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-			}
+		.display-4 {
+			text-shadow: 2px 2px 5px black;
+		}
 
-			a.navbar-brand {
-				color: white;
-				font-size: 1.6rem;
-			}
+		.carousel-item {
+			height: 65vh;
+			min-height: 350px;
+			background: no-repeat center center scroll;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
 
-			li.nav-item > a {
+		a.navbar-brand {
+			color: white;
+			font-size: 1.6rem;
+		}
+
+		li.nav-item>a {
+			color: white;
+			font-size: 1.2rem;
+			margin-left: 10px;
+			text-shadow: 2px 2px 5px black;
+			padding-left: 3.8rem;
+		}
+
+		li.nav-item>a:hover {
+			transition: 0.2s;
+			color: #f78825;
+		}
+
+		.navbar {
+			background-color: rgb(0, 27, 66, 0.85);
+		}
+
+		@media only screen and (max-width: 768px) {
+			li.nav-item>a {
 				color: white;
 				font-size: 1.2rem;
 				margin-left: 10px;
@@ -71,178 +79,138 @@
 				padding-left: 3.8rem;
 			}
 
-			li.nav-item > a:hover {
-				transition: 0.2s;
-				color: #f78825;
+			li.nav-item>a:hover {
+				padding-left: 4rem;
+				transition: 0.5s;
+				line-height: 2rem;
+				border-radius: 5px;
 			}
+		}
 
-			.navbar {
-				background-color: rgb(0, 27, 66, 0.85);
-			}
-
-			@media only screen and (max-width: 768px) {
-				li.nav-item > a {
-					color: white;
-					font-size: 1.2rem;
-					margin-left: 10px;
-					text-shadow: 2px 2px 5px black;
-					padding-left: 3.8rem;
-				}
-
-				li.nav-item > a:hover {
-					padding-left: 4rem;
-					transition: 0.5s;
-					line-height: 2rem;
-					border-radius: 5px;
-				}
-			}
-
-			hr.style-one {
-				border: 0;
-				height: 1px;
-				background: #333;
-				background-image: -webkit-linear-gradient(
-					left,
+		hr.style-one {
+			border: 0;
+			height: 1px;
+			background: #333;
+			background-image: -webkit-linear-gradient(left,
 					#ccc,
 					#333,
-					#ccc
-				);
-				background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
-				background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
-				background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
-				width: 50%;
-				margin-bottom: 5rem;
-			}
+					#ccc);
+			background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+			background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+			background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+			width: 50%;
+			margin-bottom: 5rem;
+		}
 
-			* {
-				box-sizing: border-box;
-			}
+		* {
+			box-sizing: border-box;
+		}
 
-			/* To remove horizontal scroll due to row/navbar */
-			.row {
-				margin-right: 0;
-				padding: 0;
-			}
+		/* To remove horizontal scroll due to row/navbar */
+		.row {
+			margin-right: 0;
+			padding: 0;
+		}
 
-			li.navbar-nav {
-				text-shadow: 2px 2px 5px red;
-			}
+		li.navbar-nav {
+			text-shadow: 2px 2px 5px red;
+		}
 
-			.section-1 {
-				background-image: url(images/back-2.png);
-				background-position: center;
-				background-size: cover;
-				background-repeat: no-repeat;
-			}
+		.section-1 {
+			background-image: url(images/back-2.png);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
 
-			#gallery {
-				background-image: url(images/back-3.jpg);
-				background-color: rgba(255, 255, 255, 0.65);
-				background-blend-mode: lighten;
-				background-position: center;
-				background-size: cover;
-				background-repeat: no-repeat;
-			}
+		#gallery {
+			background-image: url(images/back-3.jpg);
+			background-color: rgba(255, 255, 255, 0.65);
+			background-blend-mode: lighten;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
 
-			section {
-				padding-top: 5rem;
-				padding-bottom: 5rem;
-			}
+		section {
+			padding-top: 5rem;
+			padding-bottom: 5rem;
+		}
 
-			.navbar-nav {
-				display: flex;
-			}
+		.navbar-nav {
+			display: flex;
+		}
 
-			.row {
-				margin-left: 0px;
-			}
+		.row {
+			margin-left: 0px;
+		}
 
-			.navbar-nav a {
-				position: relative;
-				color: #fff;
-				text-decoration: none;
-				font-family: "poppins", sans-serif;
-			}
+		.navbar-nav a {
+			position: relative;
+			color: #fff;
+			text-decoration: none;
+			font-family: "poppins", sans-serif;
+		}
 
-			.navbar-nav a + a {
-				margin-left: 1rem;
-			}
+		.navbar-nav a+a {
+			margin-left: 1rem;
+		}
 
-			.navbar-nav a::after {
-				content: "";
-				display: block;
-				margin: auto;
-				bottom: 0;
-				left: 0;
-				width: 0px;
-				margin-top: 10px;
-				height: 3px;
-				border-radius: 5px;
-				background: transparent;
-				transition: width 0.5s ease, background-color 0.5s ease;
-			}
+		.navbar-nav a::after {
+			content: "";
+			display: block;
+			margin: auto;
+			bottom: 0;
+			left: 0;
+			width: 0px;
+			margin-top: 10px;
+			height: 3px;
+			border-radius: 5px;
+			background: transparent;
+			transition: width 0.5s ease, background-color 0.5s ease;
+		}
 
-			.navbar-nav a:hover::after {
-				width: 100%;
-				background: #f78825;
-			}
-		</style>
-	</head>
+		.navbar-nav a:hover::after {
+			width: 100%;
+			background: #f78825;
+		}
+	</style>
+</head>
 
-	<body>
-		<!-- Navigation -->
-		<nav class="navbar navbar-expand-lg fixed-top">
-			<div class="container">
-				<a class="navbar-brand" href="/">Papaspot</a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-toggle="collapse"
-					data-target="#navbarResponsive"
-					aria-controls="navbarResponsive"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span
-						><i
-							class="fa fa-bars"
-							style="color: #fff; font-size: 28px"
-						></i
-					></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="/"
-								>Home
-								<span class="sr-only">(current)</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/restaurants"
-								>Restaurants <i class="fas fa-utensils"></i
-							></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/entertainment"
-								>Entertainment <i class="fas fa-dice"></i>
-								<!--<i class="fa fa-headset"></i> --></a
-							>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/hills"
-								>Hills
-								<!--  <i class="fa fa-mountain"></i>--></a
-							>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/contact"
-								>Contact <i class="far fa-id-card"></i
-							></a>
-						</li>
-					</ul>
-				</div>
+<body>
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="/">Papaspot</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span><i class="fa fa-bars" style="color: #fff; font-size: 28px"></i></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/restaurants">Restaurants <i class="fas fa-utensils"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/entertainment">Entertainment <i class="fas fa-dice"></i>
+							<!--<i class="fa fa-headset"></i> --></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/hills">Hills
+							<!--  <i class="fa fa-mountain"></i>--></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/faq">FAQs <i class="far fa-id-card"></i></a>
+					</li>
+				</ul>
 			</div>
-		</nav>
-	</body>
+		</div>
+	</nav>
+</body>
+
 </html>
