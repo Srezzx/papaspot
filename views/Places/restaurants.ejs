@@ -111,6 +111,9 @@
 
                 <p class="restraunt-p">Cost for two : Rs.<%= place.cost_for_two %></p>
                 <p class="restraunt-p">Payment Method : <%= place.payment_method %></p>
+                <% if(place.crowd && (place.crowd).length > 2) { %>
+                <p class="restraunt-p">AC : <%= place.crowd %></p>
+                <% } %>
                 <div class="restraunt-buttons-1">
                     <a href="#" style="color:white;display:inline;" class=" btn btn-danger">Directions</a>
                     <a href="#" class="btn restraunt-btn-2">Share Link</a>
@@ -127,8 +130,20 @@
                     <i class="fas fa-star-half"></i>
                     <% } %>
                 </p>
+                <% if(place.must_try && (place.must_try).length >2) { %>
                 <p><span style="color:red;">Must Try: </span><%= place.must_try %></p>
+                <% } %>
+                <% if(place.cuisine && (place.cuisine).length > 2) { %>
                 <p class="restraunt-p">Cuisine : <%= place.cuisine %></p>
+                <% } %>
+                <% if(place.mode_of_transport && (place.mode_of_transport).length > 2) { %>
+                <p class="restraunt-p">Mode Of Transport : <%= place.mode_of_transport %></p>
+                <% } %>
+                <% if(place.ac && (place.ac).length > 2) { %>
+                <p class="restraunt-p">AC : <%= place.ac %></p>
+                <% } %>
+
+
 
             </div>
         </div>

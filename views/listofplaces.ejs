@@ -122,7 +122,9 @@
         color: grey;
         font-size: 0.9rem;
         text-align: left;
-        line-height: 0.2rem;
+        line-height: 1.1rem;
+        margin-bottom: 4px;
+        margin-top: 4px;
     }
 
     h6.restraunt-list-card-font {
@@ -169,8 +171,21 @@
                                     style="font-size:115%;"><%= place.rating %></span>
 
                             </p>
+                            <% if(place.cuisine && (place.cuisine).length > 2) { %>
                             <p class="cuisine restraunt-list-card-font">Cuisine : <%= place.cuisine %></p>
+                            <% } %>
+
                             <p class="restraunt-list-card-font">Near : <%= place.nearby %></p>
+                            <% if(place.ac && (place.ac).length > 2) { %>
+                            <p class="restraunt-list-card-font">AC : <%= place.ac %></p>
+                            <% }else{ %>
+                            <p class="restraunt-list-card-font"> &nbsp</p>
+                            <% } %>
+                            <% if(place.crowd && (place.crowd).length > 2) { %>
+                            <p class="restraunt-list-card-font">Crowd : <%= place.crowd %></p>
+                            <% }else{ %>
+                            <p class="restraunt-list-card-font">&nbsp </p>
+                            <% } %>
                         </div>
                         <form action="/<%= place.type %>/<%= place._id %>">
                             <div style="margin:0;" class=" row">

@@ -107,6 +107,9 @@
                 <p class="restraunt-p">Timings : <%= place.open_timings %> &nbsp <span style="color:red">(Closed
                         Now)</span></p>
                 <% } %>
+                <% if(place.crowd && (place.crowd).length > 2) { %>
+                <p class="restraunt-p">AC : <%= place.crowd %></p>
+                <% } %>
                 <p class="restraunt-p">Mode of Travel : Rentals</p>
                 <div class="restraunt-buttons-1">
                     <a href="#" style="color:white;display:inline;" class=" btn btn-danger">Directions</a>
@@ -115,8 +118,21 @@
             </div>
             <div class=" col-md-6 col-xs-12">
                 <h2 class="restraunt-h2 cursive">Rating</h2>
-                <P>Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fas fa-star-half"></i></P>
+                <p>Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                        class="fa fa-star"></i><i class="fas fa-star-half"></i></p>
+                <% if(place.must_try && (place.must_try).length >2) { %>
+                <p><span style="color:red;">Must Try: </span><%= place.must_try %></p>
+                <% } %>
+                <% if(place.cuisine && (place.cuisine).length > 2) { %>
+                <p class="restraunt-p">Cuisine : <%= place.cuisine %></p>
+                <% } %>
+                <% if(place.mode_of_transport && (place.mode_of_transport).length > 2) { %>
+                <p class="restraunt-p">Mode Of Transport : <%= place.mode_of_transport %></p>
+                <% } %>
+                <% if(place.ac && (place.ac).length > 2) { %>
+                <p class="restraunt-p">AC : <%= place.ac %></p>
+                <% } %>
+
 
             </div>
         </div>
