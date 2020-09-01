@@ -22,7 +22,7 @@
                     <select id="type" name="type" class="browser-default custom-select" required>
                         <option hidden disabled Selected value="">Select Type</option>
                         <option value="restaurant">Restaurant</option>
-                        <option value="gaming">Gaming</option>
+                        <option value="entertainment">Entertainment</option>
                         <option value="hill">Hills</option>
                     </select>
                 </div>
@@ -43,7 +43,7 @@
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="form-group">
-                    <label>Cusine</label>
+                    <label>Cuisine</label>
                     <input type="String" placeholder="Enter types of food available" name="cusine" class="form-control"
                         required>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="form-group">
                     <label>Must Try</label>
                     <input type="String" placeholder="Enter special must try dishes" name="must_try"
-                        class="form-control" required>
+                        class="form-control">
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">
@@ -95,7 +95,32 @@
                 <div class="form-group">
                     <label>Open Timings</label>
                     <input type="String" placeholder="Enter timings seperated by a '-' (24 hr clock)"
-                        name="open_timings" class="form-control" required>
+                        name="open_timings" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="form-group">
+                    <label>ETA</label>
+                    <input type="Number" placeholder="Enter estimated time of arrival" name="eta" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="form-group">
+                    <label>Mode of Transport</label>
+                    <input type="String" placeholder="Enter mode of transport" name="mode_of_transport"
+                        class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="form-group">
+                    <label>Crowd</label>
+                    <input type="String" placeholder="Choose averge crowd condition" name="crowd" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="form-group">
+                    <label>Air Conditioner</label>
+                    <input type="String" placeholder="Choose weather it has ac or not" name="ac" class="form-control">
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">
@@ -164,6 +189,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-success">Add Comment</button>
+
     </form>
 </div>
 

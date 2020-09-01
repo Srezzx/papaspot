@@ -5,7 +5,7 @@ var placesSchema = new mongoose.Schema({
     type: String,
     rating: Number,
     nearby: String,
-    cusine: String,
+    cuisine: String,
     payment_method: String,
     cost_for_two: String,
     must_try: String,
@@ -16,6 +16,8 @@ var placesSchema = new mongoose.Schema({
     open_timings: String,
     crowd: String,
     ac: String,
+    eta: String,
+    mode_of_transport: String,
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comments"

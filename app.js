@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-
+var Swal = require('sweetalert2');
 app.set("view engine", "ejs");
 
 
@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({
 
 var Places = require("./models/places");
 var Comments = require("./models/comments");
+var userEntry = require("./models/userentry");
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/public/images"));
@@ -53,12 +54,12 @@ app.get("/restaurant/:id", function (req, res) {
     });
 });
 
-app.get("/gaming/:id", function (req, res) {
+app.get("/entertainment/:id", function (req, res) {
     Places.findById(req.params.id).populate("comments").exec(function (err, place) {
         if (err) {
             console.log(err);
         } else {
-            res.render("Places/gaming", {
+            res.render("Places/entertainment", {
                 place: place
             });
         }
@@ -92,13 +93,13 @@ app.get("/restaurants", function (req, res) {
 
 });
 
-app.get("/gaming", function (req, res) {
+app.get("/entertainment", function (req, res) {
     Places.find({}, function (err, allplaces) {
         if (err) {
             console.log(err);
         } else {
             res.render("listofplaces", {
-                show: 'gaming',
+                show: 'entertainment',
                 allplaces: allplaces
             });
         }
@@ -144,7 +145,7 @@ app.post("/kadabra/restaurant/new/:id", function (req, res) {
             type: req.body.type,
             rating: req.body.rating,
             nearby: req.body.nearby,
-            cusine: req.body.cusine,
+            cuisine: req.body.cuisine,
             payment_method: req.body.payment_method,
             cost_for_two: req.body.cost_for_two,
             musts_try: req.body.musts_try,
@@ -153,6 +154,10 @@ app.post("/kadabra/restaurant/new/:id", function (req, res) {
             open_timings: req.body.open_timings,
             identity: req.body.identity,
             io_location: req.body.io_location,
+            ac: req.body.ac,
+            crowd: req.body.crowd,
+            mode_of_transport: req.body.mode_of_transport,
+            eta: req.body.eta
 
         }
         var nC = {
@@ -204,7 +209,25 @@ app.post("/kadabra/restaurant/new/:id", function (req, res) {
     res.redirect("/");
 });
 
+app.post("/comments/request/:id", function (req, res) {
+    console.log(req.body);
+    var nC = {
+        author_name: req.body.comment_author,
+        date: req.body.comment_date,
+        content: req.body.comment_content,
+        faq_question: req.body.faq_question,
+        faq_answer: req.body.faq_answer,
+        name_of_place: req.body.name_of_place
+    }
 
+    userEntry.create(nC, function (err, newcomment) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect("/restaurant/" + req.params.id)
+        }
+    });
+});
 
 app.listen(process.env.PORT || 3000, process.env.ID, function (req, res) {
     console.log("Server has started for todoList at PORT 3000");
