@@ -161,45 +161,47 @@
         <div class="row">
             <% allplaces.forEach(function(place){ 
                 if(show === place.type){ %>
-            <div class="col-lg-4 col-md-6 col-xs-12 mb-4 areatosearch">
-                <div style="padding:3%;" class="card">
-                    <img style="border-radius:5px;" src="images/1.jpg" alt="" class="restraunt-list-img">
-                    <div style="padding:0;" class="">
-                        <div style="margin:0; padding:1rem 0 0 0rem ;" class="card-heade">
-                            <h6 class="restaurant-name restraunt-list-card-font"><%= place.name %></h6>
-                            <p class="restraunt-list-card-font"><i class="restraunt-card-icon fas fa-star"></i><span
-                                    style="font-size:115%;"><%= place.rating %></span>
+            <a style="text-decoration:none;" href="/<%= place.type %>/<%= place._id %>">
+                <div class="col-lg-4 col-md-6 col-xs-12 mb-4 areatosearch">
+                    <div style="padding:3%;" class="card">
+                        <img style="border-radius:5px;" src="images/<%= place.identity %>-1.png" alt="Place Image"
+                            class="restraunt-list-img">
+                        <div style="padding:0;" class="">
+                            <div style="margin:0; padding:1rem 0 0 0rem ;" class="card-heade">
+                                <h6 class="restaurant-name restraunt-list-card-font"><%= place.name %></h6>
+                                <p class="restraunt-list-card-font"><i class="restraunt-card-icon fas fa-star"></i><span
+                                        style="font-size:115%;"><%= place.rating %></span>
+                                </p>
+                                <% if(place.cuisine && (place.cuisine).length > 2) { %>
+                                <p class="cuisine restraunt-list-card-font">Cuisine : <%= place.cuisine %></p>
+                                <% } %>
 
-                            </p>
-                            <% if(place.cuisine && (place.cuisine).length > 2) { %>
-                            <p class="cuisine restraunt-list-card-font">Cuisine : <%= place.cuisine %></p>
-                            <% } %>
-
-                            <p class="restraunt-list-card-font">Near : <%= place.nearby %></p>
-                            <% if(place.ac && (place.ac).length > 2) { %>
-                            <p class="restraunt-list-card-font">AC : <%= place.ac %></p>
-                            <% }else{ %>
-                            <p class="restraunt-list-card-font"> &nbsp</p>
-                            <% } %>
-                            <% if(place.crowd && (place.crowd).length > 2) { %>
-                            <p class="restraunt-list-card-font">Crowd : <%= place.crowd %></p>
-                            <% }else{ %>
-                            <p class="restraunt-list-card-font">&nbsp </p>
-                            <% } %>
-                        </div>
-                        <form action="/<%= place.type %>/<%= place._id %>">
-                            <div style="margin:0;" class=" row">
-                                <button type="submit    " class="ml-auto   btn  btn-section-2-mid">More<i
-                                        class="ml-1 fas fa-arrow-circle-right"></i>
-                                </button>
+                                <p class="restraunt-list-card-font">Near : <%= place.nearby %></p>
+                                <% if(place.ac && (place.ac).length > 2) { %>
+                                <p class="restraunt-list-card-font">AC : <%= place.ac %></p>
+                                <% }else{ %>
+                                <p class="restraunt-list-card-font"> &nbsp</p>
+                                <% } %>
+                                <% if(place.crowd && (place.crowd).length > 2) { %>
+                                <p class="restraunt-list-card-font">Crowd : <%= place.crowd %></p>
+                                <% }else{ %>
+                                <p class="restraunt-list-card-font">&nbsp </p>
+                                <% } %>
                             </div>
-                        </form>
+                            <form action="/<%= place.type %>/<%= place._id %>">
+                                <div style="margin:0;" class=" row">
+                                    <button type="submit    " class="ml-auto   btn  btn-section-2-mid">More<i
+                                            class="ml-1 fas fa-arrow-circle-right"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <%  }}); %>
+            </a>
         </div>
+        <%  }}); %>
     </div>
+</div>
 </div>
 <script>
     $(document).ready(function () {
