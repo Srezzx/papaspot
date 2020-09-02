@@ -1,9 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
-	<body></body>
-</html>
+<%- include("partials/header"); %>
+
+
+<div class="container">
+	<form>
+		<div class="field" tabindex="1">
+			<label for="username">
+				<i class="far fa-user"></i>Your Name
+			</label>
+			<input name="username" type="text" placeholder="e.g. john doe" required>
+		</div>
+		<div class="field" tabindex="2">
+			<label for="email">
+				<i class="far fa-envelope"></i>Your Email
+			</label>
+     
+			<input name="email" type="text" placeholder="email@domain.com" required>
+		</div>
+		<div class="field" tabindex="3">
+			<label for="message">
+				<i class="far fa-edit"></i>Your Message
+			</label>
+			<textarea name="message" placeholder="type here" required></textarea>
+		</div>
+		<button type="reset">Send Me Message</button>
+		<div class="social-media">
+			<span>
+				Get In Touch<i class="fas fa-long-arrow-alt-right"></i>
+			</span>
+      <a class="fab fa-instagram" href="https://www.instagram.com/vinnovateit/?hl=en" target="blank_"></a>
+			<a class="fab fa-facebook-f" href="https://www.facebook.com/VinnovateIT/" target="blank_"></a>
+			<a class="fab fa-twitter" href="https://twitter.com/v_innovate_it" target="blank_"></a>
+      <a class="fab fa-github" href="https://github.com/vinnovateit" target="blank_"></a>
+      <a class="fab fa-linkedin" href="https://in.linkedin.com/company/v-innovate-it" target="blank_"></a>
+<!-- 			<a class="fab fa-vinnovateit" href="https://vinnovateit.com/" target="blank_"></a> -->
+		</div>
+	</form>
+</div>
+
+@import url('https://fonts.googleapis.com/css2?family=Rufina&display=swap');
+
+$all: all .5s ease;
+$sai: 'Saira Semi Condensed', sans-serif;
+
+*{
+    @include tf($tf-fm: $sai);
+    @include other($ot-tsi: $all)
+}
+
+body{
+    background: #dfdfdf
+}
+
+.container{
+    @include bm(100%, 100%, $bm-pd: 0 16px, $bm-dp: $fl);
+    @include flex-center($rnw)
+}
+
+form{
+    @include bm(400px, $bm-dp: $fl);
+    @include flex-center($cw);
+        div, label, input, textarea{
+            @include bm(100%)
+        }
+}
+
+.field:nth-of-type(2){
+    @include bm($bm-mg: 16px 0)
+}
+
+label, input, textarea{
+    @include bm($bm-pd: 8px)
+}
+
+label, [placeholder]{
+    @include tf(#555)
+}
+
+label i{
+    @include bm($bm-mg: 0 10px 0 0)
+}
+
+.field:focus-within label{
+    @include tf(#000, $tf-ls: 2px)
+}
+
+input, textarea{
+    background: rgba(255,255,255,.5);
+    border: none;
+    @include other($ot-br: 4px, $ot-bs: $o-b);
+        &:focus{
+            background: rgba(255,255,255,1);
+            @include other($ot-bs: none)
+        }
+}
+
+textarea{
+    resize: none;
+        &::-webkit-scrollbar{
+            @include bm(0)
+        }
+}
+
+button{
+    background: #2f4ad0;
+    @include bm($bm-pd: 8px 16px, $bm-mg: 16px 0 50px 0);
+    @include tf(#fff);
+    border: none;
+    @include other($ot-br: 4px, $ot-cr: pointer, $ot-bs: $o-b);
+        &:hover{
+            @include tf($tf-ls: 2px);
+            @include other($ot-bs: none)
+        }
+}
+
+.social-media{
+    @include bm($bm-dp: $fl);
+    @include fb($rw, $fb-jc: $sa);
+        :not(&){
+            @include tf($tf-fs: 14px)
+        }
+        span{
+            @include tf($tf-fs: 16px)
+        }
+        span .fas{
+            @include bm($bm-mg: 0 0 0 10px)
+        }
+        a{
+            @include tf(#000, $tf-fs: 20px)
+        }
+}
+
+@media (max-width: 425px){
+    form{
+        @include bm(100%)
+    }
+}
+
+<!-- This is not part of Pen -->
+<a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank" style="color:#000"></a>
+
+
+<%- include("partials/footer"); %>
