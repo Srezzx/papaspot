@@ -27,6 +27,10 @@
                         <label for="message-text" class="col-form-label">Comment:</label>
                         <textarea class="form-control" name="comment_content" id="comment" required></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Instagram Id Link</label>
+                        <input type="text" name="insta_id" class="form-control" id="insta_id" required>
+                    </div>
                     <% var x= new Date(); %>
                     <div style="display:none;" class="form-group">
                         <label for="message-text" class="col-form-label">Today Date</label>
@@ -171,13 +175,13 @@
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div id="menuimgs" class="section">
             <div class="row ">
                 <div class=" div-restraunt-h2 col-md-6 col-xs-12">
                     <h2 class="restraunt-h2 cursive">Menu</h2>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class=" row justify-content-center">
                 <div class="col-4 row justify-content-center">
                     <a class="lightbox" href="#menu-1">
                         <img class="img-responsive" src="/images/<%= place.identity %>-menu-1.png" />
@@ -297,15 +301,15 @@
 
 <div class="lightbox-target" id="menu-1">
     <img src="/images/<%= place.identity %>-menu-1.png" />
-    <a class="lightbox-close" href="#"></a>
+    <a class="lightbox-close" href="#menuimgs"></a>
 </div>
 <div class="lightbox-target" id="menu-2">
     <img src="/images/<%= place.identity %>-menu-2.png" />
-    <a class="lightbox-close" href="#"></a>
+    <a class="lightbox-close" href="#menuimgs"></a>
 </div>
 <div class="lightbox-target" id="menu-3">
     <img src="/images/<%= place.identity %>-menu-3.png" />
-    <a class="lightbox-close" href="#"></a>
+    <a class="lightbox-close" href="#menuimgs"></a>
 </div>
 <Script>
     // Get the modal

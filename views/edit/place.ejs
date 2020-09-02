@@ -7,7 +7,7 @@
 </style>
 
 <div style="margin-top:15rem;" class="container">
-    <form action="/kadabra/restaurant/new/1" method="POST">
+    <form action="/kadabra/restaurant/edit" method="POST">
         <h1>Add a place</h1>
         <div class="row">
             <div class="col-md-6 col-xs-12">
@@ -94,7 +94,8 @@
             <div class="col-md-6 col-xs-12">
                 <div class="form-group">
                     <label>Open Timings</label>
-                    <input type="String" placeholder="Enter timings seperated by a '-' (24 hr clock)"
+                    <input type="String"
+                        placeholder="Enter timings seperated by a '-' (24 hr clock) and multiple by a ','"
                         name="open_timings" class="form-control">
                 </div>
             </div>
@@ -130,80 +131,10 @@
                         name="features" class="form-control" required>
                 </div>
             </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Author Name</label>
-                    <input type="String" placeholder="Enter Author Name" name="comment_author" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Comment Date</label>
-                    <input type="date" placeholder="Enter Comment Date" name="comment_date" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Comment Content</label>
-                    <input type="String" placeholder="Enter comment content" name="comment_content"
-                        class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Instagram Id Link</label>
-                    <input type="String" placeholder="Enter link to insta id" name="insta_id" class="form-control">
-                </div>
-            </div>
-
         </div>
         <button type="submit" class="btn btn-success">Add Place</button>
     </form>
 
-    <form style="margin-top:15rem;" action="/kadabra/restaurant/new/2" method="POST">
-        <h1>Add Comment</h1>
-        <div class="row">
-
-            <div class="form-group col-md-6 col-xs-12">
-                <label>Select place</label>
-                <select id="place" name="place" class="browser-default custom-select" required>
-                    <option hidden Selected value="">Select Place</option>
-                    <% allplaces.forEach(function(place){ %>
-                    <option value="<%= place._id %>"><%= place.name %></option>
-                    <% }); %>
-                </select>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Author Name</label>
-                    <input type="String" placeholder="Enter Author Name" name="comment_author" class="form-control"
-                        required>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Comment Date</label>
-                    <input type="date" placeholder="Enter Comment Date" name="comment_date" class="form-control"
-                        required>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Comment Content</label>
-                    <input type="String" placeholder="Enter comment content" name="comment_content" class="form-control"
-                        required>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Instagram Id Link</label>
-                    <input type="String" placeholder="Enter link to insta id" name="insta_id" class="form-control">
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-success">Add Comment</button>
-
-    </form>
 </div>
 
 <%- include("../partials/footer"); %>

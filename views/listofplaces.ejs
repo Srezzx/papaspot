@@ -158,7 +158,7 @@
             <span class="fas ico"></span><input id="myInput" placeholder="What are you looking for? " name="searchbar"
                 class="list-searchbar" type="text">
         </div>
-        <div class="row">
+        <div data-aos-offset="" data-aos-duration="350" data-aos="zoom-in" class="row">
             <% allplaces.forEach(function(place){ 
                 if(show === place.type){ %>
             <a style="text-decoration:none;" href="/<%= place.type %>/<%= place._id %>">

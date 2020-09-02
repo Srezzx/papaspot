@@ -4,6 +4,7 @@ var commentsSchema = new mongoose.Schema({
     author_name: String,
     content: String,
     date: String,
+    insta_id: String
 
 });
 

@@ -160,7 +160,7 @@
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div id="menuimgs" class="section">
             <div class="row ">
                 <div class=" div-restraunt-h2 col-md-6 col-xs-12">
                     <h2 class="restraunt-h2 cursive">Memories</h2>
@@ -221,13 +221,15 @@
 
                     <div class="info">
                         <a href="#"><%= comment.author_name %></a>
-                        <span><%= comment.date %></span>
+                        <span><a style="margin:0;padding:0;" href="https://www.instagram.com/"><img
+                                    style="margin:0;padding:0;width:15px; height:15px;"
+                                    src="/images/instagram.png"></a></span>
                     </div>
                     <a class="avatar" href="#">
                         <img src="/images/avatar/avatar_user_1.jpg" width="35" alt="Profile Avatar"
                             title="Anie Silverston" />
                     </a>
-                    <p><%= comment.content %> </p>
+                    <p><%= comment.content %></p>
                 </li>
                 <% }); %>
                 <li class="comment user-comment">
@@ -241,8 +243,7 @@
 
                     <p style="margin:0;padding:0;"><button style="margin:auto auto;width:100%; height:100%;"
                             type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                            data-whatever="@mdo">Open modal for
-                            Add a comment of your own</button></p>
+                            data-whatever="@mdo">Been here? Add your review!!</button></p>
                 </li>
             </ul>
         </div>
@@ -281,15 +282,15 @@
 
 <div class="lightbox-target" id="menu-1">
     <img src="/images/<%= place.identity %>-menu-1.png" />
-    <a class="lightbox-close" href="#"></a>
+    <a class="lightbox-close" href="#menuimgs"></a>
 </div>
 <div class="lightbox-target" id="menu-2">
     <img src="/images/<%= place.identity %>-menu-2.png" />
-    <a class="lightbox-close" href="#"></a>
+    <a class="lightbox-close" href="#menuimgs"></a>
 </div>
 <div class="lightbox-target" id="menu-3">
     <img src="/images/<%= place.identity %>-menu-3.png" />
-    <a class="lightbox-close" href="#"></a>
+    <a class="lightbox-close" href="#menuimgs"></a>
 </div>
 <Script>
     // Get the modal
