@@ -229,7 +229,7 @@ app.post("/comments/request/:id", function (req, res) {
 });
 
 app.get("/lifehacks", function (req, res) {
-    res.send("Life hack page goes here");
+    res.render("lifehacks");
 });
 
 app.listen(process.env.PORT || 3000, process.env.ID, function (req, res) {
