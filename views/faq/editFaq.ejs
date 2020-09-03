@@ -1,0 +1,75 @@
+<%- include("../partials/header"); %>
+
+<style>
+	a {
+		text-decoration: none;
+	}
+
+	.boom_poom {
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	}
+
+	.boom_poom:hover {
+		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+			0 10px 10px rgba(0, 0, 0, 0.22);
+	}
+	
+</style>
+<script>
+	function showEditForm() {
+		$(".edit-form").toggle();
+	}
+</script>
+
+<section>
+	<div class="row justify-content-center">
+		<div class="col-md-8 pt-3">
+			<div style="
+					box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+						0 3px 6px rgba(0, 0, 0, 0.23);
+				" class="accordion" id="accordionExample">
+				<% faqs.forEach(faq => { %>
+					<div class="card">
+						<div class="card-header" id="headingOne">
+							<h2 class="mb-0">
+								<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+									data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									<%= faq.question %>
+								</button>
+							</h2>
+						</div>
+
+						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+							data-parent="#accordionExample">
+							<div class="card-body">
+								<% if(faq.answer) { %>
+									<%= faq.answer %>
+								<% } else { %>
+                                    Answer coming soon!
+                                    <% } %>	
+                                <div class="edit-buttons float-right mb-3 d-flex">
+                                    <button class="btn btn-success mx-2" onclick="showEditForm()"><%= faq.answer ? "Edit" : "Answer" %></button>
+                                    <form action="/faq/editByAdmin/<%=faq._id%>?_method=DELETE" method="POST">
+                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                    </form>
+                                </div>
+                                <form action="/faq/editByAdmin/<%=faq._id%>?_method=PUT" method="POST" class="edit-form" style="display: none;">
+                                    <div class="form-group">
+                                        <textarea name="answer" id="answer" cols="30" rows="10" placeholder="Start typing..." 
+										class="form-control"><%=faq.answer%></textarea>
+									</div>
+									<div class="form-group">
+										<button class="btn btn-outline-success" type="submit">Submit</button>
+									</div>
+                                </form>
+							</div>
+						</div>
+					</div>
+				<% }) %>
+			</div>
+		</div>
+	</div>
+</section>
+
+<%- include("../partials/footer"); %>
