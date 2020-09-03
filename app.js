@@ -21,7 +21,7 @@ var mongoose = require("mongoose");
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 //mongoose.connect("mongodb://localhost/YelpCamp"); //-- for local database
-mongoose.connect("mongodb://127.0.0.1:27017/Papaspot", {
+mongoose.connect("mongodb+srv://Srezz:E0Y550F4bZhiXLeX@cluster0-oshu0.mongodb.net/todolist?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useCreateIndex: true
 }).then(() => {
@@ -122,61 +122,63 @@ app.get("/outing", function (req, res) {
 });
 
 app.get("/faq", function (req, res) {
-    faq.find({}, function(err, allFaq) {
-        if(err) {
+    faq.find({}, function (err, allFaq) {
+        if (err) {
             console.log(err);
-        }
-        else {
-            res.render("faq/faq", {faqs: allFaq});
+        } else {
+            res.render("faq/faq", {
+                faqs: allFaq
+            });
         }
     })
 });
 
-app.post("/faq/new", function(req, res) {
+app.post("/faq/new", function (req, res) {
     var name = req.body.name;
     var email = req.body.email;
     var question = req.body.question;
     var newFaq = {
         question: question
     };
-    faq.create(newFaq, function(err, newFaq) {
-        if(err) {
+    faq.create(newFaq, function (err, newFaq) {
+        if (err) {
             console.log(err);
-        }
-        else {
+        } else {
             console.log(newFaq);
             res.redirect("/faq");
         }
     })
 });
 
-app.get("/faq/editByAdmin", function(req, res) {
-    faq.find({}, function(err, allFaq) {
-        if(err) {
+app.get("/faq/editByAdmin", function (req, res) {
+    faq.find({}, function (err, allFaq) {
+        if (err) {
             console.log(err);
-        }
-        else {
-            res.render("faq/editFaq", {faqs: allFaq});
+        } else {
+            res.render("faq/editFaq", {
+                faqs: allFaq
+            });
         }
     })
 });
 
-app.put("/faq/editByAdmin/:id", function(req, res) {
+app.put("/faq/editByAdmin/:id", function (req, res) {
     const answer = req.body.answer;
-    faq.findByIdAndUpdate(req.params.id, {answer: answer}, function(err, updatedFaq) {
-        if(err) {
+    faq.findByIdAndUpdate(req.params.id, {
+        answer: answer
+    }, function (err, updatedFaq) {
+        if (err) {
             console.log(err);
-        }
-        else {
+        } else {
             console.log(updatedFaq);
             res.redirect("/faq/editByAdmin");
         }
     })
 });
 
-app.delete("/faq/editByAdmin/:id", function(req, res) {
-    faq.findByIdAndDelete(req.params.id, function(err) {
-        if(err) {
+app.delete("/faq/editByAdmin/:id", function (req, res) {
+    faq.findByIdAndDelete(req.params.id, function (err) {
+        if (err) {
             console.log(err);
         } else {
             res.redirect("/faq/editByAdmin");
