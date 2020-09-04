@@ -3,6 +3,7 @@ var mongoose = require("mongoose");
 var placesSchema = new mongoose.Schema({
     name: String,
     type: String,
+    sub_type: String,
     rating: Number,
     nearby: String,
     cuisine: String,
@@ -18,6 +19,7 @@ var placesSchema = new mongoose.Schema({
     ac: String,
     eta: String,
     mode_of_transport: String,
+
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comments"
