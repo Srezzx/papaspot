@@ -399,14 +399,14 @@
                         <%}else { %>
                     <li class="comment user-comment">
                         <% } %>
-
                         <div class="info">
                             <a href="#"><%= comment.author_name %></a>
                         </div>
                         <a class="avatar" href="<%= comment.insta_id %>">
                             <% var x =(comment.author_name).split(" "); var name = (x[0]+x[1]).toLowerCase();%>
-                            <img src="/images/<%= (name).toLowerCase()%>.jpeg" width="35"
-                                alt="<%= comment.author_name%>" />
+                            <!-- <img src="/images/<%= (name).toLowerCase()%>.jpeg" width="35"
+                                alt="<%= comment.author_name%>" /> -->
+                            <img src="/images/dp.jpg" width="35" alt="<%= comment.author_name%>" />
                         </a>
                         <p><%= comment.content %></p>
                     </li>
