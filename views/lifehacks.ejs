@@ -1,0 +1,254 @@
+<%- include("partials/header"); %>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+    @import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+    body {
+        background-color: #f7f7f7;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .title {
+        font-family: "Montserrat";
+        text-align: center;
+        color: #FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 1px;
+    }
+
+    h1 {
+        background-image: url('/images/fire-2.gif');
+        background-size: cover;
+        color: transparent;
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
+        text-transform: uppercase;
+        font-size: 3rem;
+    }
+
+    /* styling my button */
+    main {
+        margin-top: 7rem;
+    }
+
+    .list-style {
+        padding: 2rem 2rem 2rem 2rem;
+        background-color: white;
+        margin: 10px 10px 40px 0px;
+
+    }
+
+    .list-style:hover {
+        box-shadow: 3px 3px 8px black;
+        transition: 0.2s;
+
+    }
+
+    .list-style:hover .question {
+        left: -40px;
+        transition: 0.5s;
+    }
+
+    .list-style:hover .countnumbers {
+        color: black;
+        transition: 0.5s;
+    }
+
+    p.countnumbers-p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .list-style:hover .question-p {
+        text-decoration: underline solid #D6D6D6;
+        transition: 0.5s;
+    }
+
+
+    .countnumbers {
+        color: #ebe6e6;
+        transition: 0.2s;
+        font-size: 3.5rem;
+    }
+
+    .question {
+        left: -140px;
+        transition: 0.2s;
+    }
+
+    p.question-p {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    @media only screen and (max-width: 1200px) {
+
+        .question {
+            left: 0px;
+            transition: 0.2s;
+        }
+
+        .list-style:hover .question {
+            left: 0px;
+            transition: 0.5s;
+        }
+
+        .lead {
+            padding-left: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 992px) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        body {
+            font-size: 80%;
+        }
+
+        p.question-p {
+            font-size: 1rem;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        body {
+            font-size: 65%;
+        }
+
+        p.question-p {
+            font-size: 0.8rem;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+        }
+    }
+
+    p,
+    div {
+        text-align: left;
+    }
+
+    h1 {
+        font-weight: 700;
+    }
+
+    .lead {
+        font-size: 105%;
+        line-height: 1.3rem;
+        font-family: 'Grandstander', cursive;
+    }
+
+    /* @media only screen and (max-width: 992px) {
+        body {
+            background-color: red;
+        }
+    } */
+</style>
+<% var count =0; %>
+<main>
+    <div class="title">
+        <h1>Cool Vit Life Hacks</h1>
+    </div>
+    <hr class="style-one">
+    <div class="gradient-list">
+        <% count ++; %>
+        <div data-aos-offset="50" data-aos-duration="300" data-aos="fade" style="width:100%;" class=" list-style row ">
+            <div class="col-1 px-0">
+                <p class="countnumbers-p"><span class="countnumbers"><%= count %></span></p>
+            </div>
+            <div class="col-11 px-0">
+                <div class="row">
+                    <div class="question col-12 ">
+                        <p class="question-p">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="lead col-12">Lorem Ipsum is simply dummy
+                        text of the printing and typesetting industry.
+                        Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                        took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                        five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p style="padding-top:20px;color:grey   ;float:right">Answered By Ayushi Bansal</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <% count ++; %>
+        <div data-aos-offset="50" data-aos-duration="300" data-aos="fade" style="width:100%;" class=" list-style row ">
+            <div class="col-1 px-0">
+                <p class="countnumbers-p"><span class="countnumbers"><%= count %></span></p>
+            </div>
+            <div class="col-11 px-0">
+                <div class="row">
+                    <div class="question col-12 ">
+                        <p class="question-p">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="lead col-12">Lorem Ipsum is simply dummy
+                        text of the printing and typesetting industry.
+                        Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                        took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                        five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <% count ++; %>
+        <div data-aos-offset="50" data-aos-duration="300" data-aos="fade" style="width:100%;" class=" list-style row ">
+            <div class="col-1 px-0">
+                <p class="countnumbers-p"><span class="countnumbers"><%= count %></span></p>
+            </div>
+            <div class="col-11 px-0">
+                <div class="row">
+                    <div class="question col-12 ">
+                        <p class="question-p">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="lead col-12">Lorem Ipsum is simply dummy
+                        text of the printing and typesetting industry.
+                        Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                        took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                        five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+<%- include("partials/footer"); %>

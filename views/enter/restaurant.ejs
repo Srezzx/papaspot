@@ -22,8 +22,8 @@
                     <select id="type" name="type" class="browser-default custom-select" required>
                         <option hidden disabled Selected value="">Select Type</option>
                         <option value="restaurant">Restaurant</option>
-                        <option value="entertainment">Entertainment</option>
-                        <option value="outing">Outing</option>
+                        <option value="hangouts">Hangouts</option>
+                        <option value="utilities">utilities</option>
                     </select>
                 </div>
             </div>
@@ -43,9 +43,17 @@
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="form-group">
-                    <label>Cuisine</label>
-                    <input type="String" placeholder="Enter types of food available" name="cusine" class="form-control"
+                    <label>Subtype</label>
+                    <input type="String" placeholder="Enter Subtype(Like gym, movie etc)" name="sub_type"
+                        class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="form-group">
+                    <label>Cuisine(Pls give for Restaurant)</label>
+                    <input type="String" placeholder="Enter types of food available" name="cuisine" class="form-control"
                         required>
+
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">
@@ -58,8 +66,7 @@
             <div class="col-md-6 col-xs-12">
                 <div class="form-group">
                     <label>Cost For 2</label>
-                    <input type="String" placeholder="Enter Cost for 2 people" name="cost_for_two" class="form-control"
-                        required>
+                    <input type="String" placeholder="Enter Cost for 2 people" name="cost_for_two" class="form-control">
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">
@@ -114,39 +121,49 @@
             <div class="col-md-6 col-xs-12">
                 <div class="form-group">
                     <label>Crowd</label>
-                    <input type="String" placeholder="Choose averge crowd condition" name="crowd" class="form-control">
+                    <input type="String" placeholder="Choose averge crowd condition" name="crowd" class="form-control"
+                        required>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="form-group">
                     <label>Air Conditioner</label>
-                    <input type="String" placeholder="Choose weather it has ac or not" name="ac" class="form-control">
+                    <input type="String" placeholder="Choose weather it has ac or not" name="ac" class="form-control"
+                        required>
+                    <select id="ac" name="ac" class="browser-default custom-select" required>
+                        <option hidden disabled Selected value="">Select AC Status</option>
+                        <option value="Fully Air Conditioned">Fully Air Conditioned</option>
+                        <option value="Partially Air conditioned">Partially Air conditioned</option>
+                        <option value="No Air Conditioner">No Air Conditioner</option>
+                    </select>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="form-group">
                     <label>Features</label>
-                    <input type="String" placeholder="Enter 3  Features seperated by - (no space bet. features)"
-                        name="features" class="form-control" required>
+                    <input type="String" placeholder="Enter 3  Features seperated by - " name=" features"
+                        class="form-control" required>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="form-group">
                     <label>Author Name</label>
-                    <input type="String" placeholder="Enter Author Name" name="comment_author" class="form-control">
+                    <input type="String" placeholder="Enter Author Name" name="comment_author" class="form-control"
+                        required>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="form-group">
                     <label>Comment Date</label>
-                    <input type="date" placeholder="Enter Comment Date" name="comment_date" class="form-control">
+                    <input type="date" placeholder="Enter Comment Date" name="comment_date" class="form-control"
+                        required>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="form-group">
                     <label>Comment Content</label>
-                    <input type="String" placeholder="Enter comment content" name="comment_content"
-                        class="form-control">
+                    <input type="String" placeholder="Enter comment content" name="comment_content" class="form-control"
+                        required>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">

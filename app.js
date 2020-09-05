@@ -38,13 +38,10 @@ app.get("/", function (req, res) {
     res.render("index");
 });
 
-app.get("/ohcheatday", function (req, res) {
-    res.render("restraunts/ohcheatday");
-});
-
 
 app.get("/restaurant/:id", function (req, res) {
-    Places.findById(req.params.id).populate("comments").exec(function (err, place) {
+    var id = mongoose.Types.ObjectId(req.params.id);
+    Places.findById(id).populate("comments").exec(function (err, place) {
         if (err) {
             console.log(err);
         } else {
@@ -55,24 +52,26 @@ app.get("/restaurant/:id", function (req, res) {
     });
 });
 
-app.get("/entertainment/:id", function (req, res) {
-    Places.findById(req.params.id).populate("comments").exec(function (err, place) {
+app.get("/hangouts/:id", function (req, res) {
+    var id = mongoose.Types.ObjectId(req.params.id);
+    Places.findById(id).populate("comments").exec(function (err, place) {
         if (err) {
             console.log(err);
         } else {
-            res.render("Places/entertainment", {
+            res.render("Places/hangouts", {
                 place: place
             });
         }
     });
 });
 
-app.get("/hill/:id", function (req, res) {
-    Places.findById(req.params.id).populate("comments").exec(function (err, place) {
+app.get("/utilities/:id", function (req, res) {
+    var id = mongoose.Types.ObjectId(req.params.id);
+    Places.findById(id).populate("comments").exec(function (err, place) {
         if (err) {
             console.log(err);
         } else {
-            res.render("Places/hill", {
+            res.render("Places/utilities", {
                 place: place
             });
         }
@@ -94,13 +93,13 @@ app.get("/restaurants", function (req, res) {
 
 });
 
-app.get("/entertainment", function (req, res) {
+app.get("/hangouts", function (req, res) {
     Places.find({}, function (err, allplaces) {
         if (err) {
             console.log(err);
         } else {
             res.render("listofplaces", {
-                show: 'entertainment',
+                show: 'hangouts',
                 allplaces: allplaces
             });
         }
@@ -108,13 +107,13 @@ app.get("/entertainment", function (req, res) {
 });
 
 
-app.get("/outing", function (req, res) {
+app.get("/utilities", function (req, res) {
     Places.find({}, function (err, allplaces) {
         if (err) {
             console.log(err);
         } else {
             res.render("listofplaces", {
-                show: 'outing',
+                show: 'utilities',
                 allplaces: allplaces
             });
         }
@@ -204,6 +203,7 @@ app.post("/kadabra/restaurant/new/:id", function (req, res) {
         var nP = {
             name: req.body.name,
             type: req.body.type,
+            sub_type: req.body.sub_type,
             rating: req.body.rating,
             nearby: req.body.nearby,
             cuisine: req.body.cuisine,
@@ -271,27 +271,32 @@ app.post("/kadabra/restaurant/new/:id", function (req, res) {
 });
 
 app.post("/comments/request/:id", function (req, res) {
-    console.log(req.body);
     var nC = {
         author_name: req.body.comment_author,
         date: req.body.comment_date,
         content: req.body.comment_content,
         faq_question: req.body.faq_question,
         faq_answer: req.body.faq_answer,
-        name_of_place: req.body.name_of_place
+        name_of_place: req.body.name_of_place,
+        insta_id: req.body.insta_id
     }
 
     userEntry.create(nC, function (err, newcomment) {
         if (err) {
             console.log(err);
         } else {
+            console.log(newcomment);
             res.redirect("/restaurant/" + req.params.id)
         }
     });
 });
 
 app.get("/lifehacks", function (req, res) {
-    res.send("Life hack page goes here");
+    res.render("lifehacks");
+});
+
+app.get("/hackathons", function (req, res) {
+    res.render("hackathons");
 });
 
 app.listen(process.env.PORT || 3000, process.env.ID, function (req, res) {

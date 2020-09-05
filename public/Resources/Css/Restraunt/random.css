@@ -34,6 +34,10 @@ div.restraunt-buttons-1>a.btn {
 
 @media only screen and (max-width: 768px) {
 
+    .restraunt-p {
+        color: #707070;
+        line-height: 0.5rem;
+    }
 
     .restraunt-buttons-1 {
         display: flex;
@@ -95,4 +99,8 @@ img.restraunt-carousel-img:hover {
     transform: scale(1.15);
     transition: 0.5s;
     opacity: 1;
+}
+
+iframe {
+    box-shadow: 3px 3px 8px black;
 }

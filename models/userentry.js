@@ -6,7 +6,8 @@ var userentrySchema = new mongoose.Schema({
     date: String,
     faq_question: String,
     faq_answer: String,
-    name_of_place: String
+    name_of_place: String,
+    insta_id: String
 
 });
 
