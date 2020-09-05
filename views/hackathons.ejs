@@ -1,8 +1,15 @@
 <%- include("partials/header"); %>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+    body {
+        background-color: #f7f7f7;
+
+    }
+
     .title {
-        font-family: "Montserrat";
+        /* font-family: "Montserrat"; */
         text-align: center;
         color: #FFF;
         display: flex;
@@ -10,6 +17,7 @@
         align-items: center;
         justify-content: center;
         letter-spacing: 1px;
+
     }
 
     .title h1 {
@@ -18,9 +26,13 @@
         color: transparent;
         -moz-background-clip: text;
         -webkit-background-clip: text;
-
+        font-weight: 900;
         font-size: 3rem;
 
+    }
+
+    .left-p {
+        margin-left: 20px;
     }
 
     main {
@@ -57,7 +69,8 @@
         float: none;
     } */
 
-    .hack-1:hover {
+    .hack-1:hover,
+    .hack-2:hover {
         box-shadow: inset 0px 0px 10px rgb(0, 27, 66);
     }
 
@@ -81,29 +94,90 @@
         justify-content: center;
     }
 
+    .hack-1 h1,
+    .hack-2 h1 {
+        margin-bottom: 2.5rem;
+        font-family: "Montserrat";
+        font-weight: 600;
+        font-family: 'Architects Daughter', cursive;
+        font-size: 250%;
+    }
+
+    p {
+        font-family: 'Grandstander', cursive;
+    }
+
+    .answer {
+        font-weight: 700;
+    }
+
     .hack-1 p {
         text-align: left;
     }
 
+    p {
+        line-height: 1.3rem;
+    }
+
     .hack-2 p,
     .hack-2 h1 {
-        text-align: right;
+        text-align: left;
+
     }
 
 
     @media only screen and (max-width:768px) {
 
+        .left-p {
+            margin-left: 10px;
+        }
 
         .img-cont {
             display: flex;
-            justify-content: start;
+            justify-content: center;
+        }
+
+        .hack-1 {
+            width: 90vw;
+            float: none;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .hack-2 {
+            width: 90vw;
+            float: none;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .hack-cont {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .title h1 {
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        .hack-1 h1,
+        .hack-2 h1 {
+            display: flex;
+            justify-content: center;
+            font-size: 200%;
+        }
+
+        .hack-1 p,
+        .hack-2 p {
+            line-height: 1rem;
         }
 
     }
 </style>
 <main>
     <div class="title">
-        <h1>Best Hackathons in Town</h1>
+        <h1 class="cursive">Best Hackathons in Town</h1>
     </div>
     <hr class="style-one">
     <div class="hack-cont">
@@ -116,17 +190,141 @@
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <h1>VITHack</h1>
-                    <p>Duration:</p>
-                    <p>On Duty :</p>
-                    <p>Food : Pizza and other snacks </p>
-                    <p>Judges: Yes</p>
-                    <p>Last Year venue : Anna Auditorium</p>
+                    <p>Duration:<span class="answer"></span></p>
+                    <p>On Duty :<span class="answer"></span></p>
+                    <p>Food : <span class="answer">Pizza and other snacks </span></p>
+                    <p>Judges: <span class="answer">Yes</span></p>
+                    <p>Last Year venue : <span class="answer">Anna Auditorium</span></p>
                 </div>
             </div>
             <div class="p mt-3 row justify-content-center">
                 <div class="col-11">
-                    <p>Review :-</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                    <p class="answer">Review by student:-</p>
+                    <p class="left-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been
+                        the
+                        industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                        scrambled it
+                        to
+                        make
+                        a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                        typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                        sheets
+                        containing
+                        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+                        including
+                        versions
+                        of Lorem Ipsum.
+
+                        Why do we use it?
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when
+                        looking at
+                        its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+                        letters,
+                        as
+                        opposed to using 'Content here, content here', making it look like readable English. Many
+                        desktop
+                        publishing
+                        packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                        'lorem
+                        ipsum'
+                        will uncover many web sites still in their infancy. Various versions have evolved over the
+                        years,
+                        sometimes
+                        by
+                        accident, sometimes on purpose (injected humour and the like).</p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class=" hack-2">
+            <div style="margin:0;padding:0;" class="row">
+
+                <div class="col-md-6 col-xs-12">
+                    <div class="mb-3 img-cont">
+                        <img src="/images/480x360.png" class="image img-responsive">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>VinHack </h1>
+                    <p>Duration :<span class="answer"></span></p>
+                    <p>On Duty : <span class="answer">YES</span></p>
+                    <p>Food : <span class="answer">Pizza and other snacks</span> </p>
+                    <p>Judges:<span class="answer"> Yes</span></p>
+                    <p>Last Year venue : <span class="answer"> Anna Auditorium</span></p>
+                </div>
+            </div>
+            <div class="p mt-3 row justify-content-center">
+                <div class="col-11">
+                    <p class="answer">Review by student:-</p>
+                    <p class="left-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been
+                        the
+                        industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                        scrambled it
+                        to
+                        make
+                        a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                        typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                        sheets
+                        containing
+                        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+                        including
+                        versions
+                        of Lorem Ipsum.
+
+                        Why do we use it?
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when
+                        looking at
+                        its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+                        letters,
+                        as
+                        opposed to using 'Content here, content here', making it look like readable English. Many
+                        desktop
+                        publishing
+                        packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                        'lorem
+                        ipsum'
+                        will uncover many web sites still in their infancy. Various versions have evolved over the
+                        years,
+                        sometimes
+                        by
+                        accident, sometimes on purpose (injected humour and the like).</p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class=" hack-1">
+            <div style="margin:0;padding:0;" class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="mb-3 img-cont">
+                        <img src="/images/480x360.png" class="image img-responsive">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>DevSoc</h1>
+                    <p>Duration:<span class="answer"></span></p>
+                    <p>On Duty :<span class="answer"></span></p>
+                    <p>Food : <span class="answer">Pizza and other snacks </span></p>
+                    <p>Judges: <span class="answer">Yes</span></p>
+                    <p>Last Year venue : <span class="answer">Anna Auditorium</span></p>
+                </div>
+            </div>
+            <div class="p mt-3 row justify-content-center">
+                <div class="col-11">
+                    <p class="answer">Review by student:-</p>
+                    <p class="left-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been
                         the
                         industry's
                         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -167,24 +365,26 @@
         </div>
         <div class=" hack-2">
             <div style="margin:0;padding:0;" class="row">
-                <div class="col-md-6 col-xs-12">
-                    <h1>VITHack</h1>
-                    <p>Duration:</p>
-                    <p>On Duty :</p>
-                    <p>Food : Pizza and other snacks </p>
-                    <p>Judges: Yes</p>
-                    <p>Last Year venue : Anna Auditorium</p>
-                </div>
+
                 <div class="col-md-6 col-xs-12">
                     <div class="mb-3 img-cont">
                         <img src="/images/480x360.png" class="image img-responsive">
                     </div>
                 </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>DevSpace</h1>
+                    <p>Duration :<span class="answer"></span></p>
+                    <p>On Duty :<span class="answer"></span></p>
+                    <p>Food : <span class="answer">Pizza and other snacks </span></p>
+                    <p>Judges: <span class="answer">Yes</span></p>
+                    <p>Last Year venue : <span class="answer">Anna Auditorium</span></p>
+                </div>
             </div>
             <div class="p mt-3 row justify-content-center">
                 <div class="col-11">
-                    <p>Review :-</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                    <p class="answer">Review by student:-</p>
+                    <p class="left-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been
                         the
                         industry's
                         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -223,6 +423,130 @@
                 </div>
             </div>
         </div>
+
+        <div class=" hack-1">
+            <div style="margin:0;padding:0;" class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="mb-3 img-cont">
+                        <img src="/images/480x360.png" class="image img-responsive">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>Women Techies</h1>
+                    <p>Duration:<span class="answer"></span></p>
+                    <p>On Duty :<span class="answer"></span></p>
+                    <p>Food : <span class="answer">Pizza and other snacks </span></p>
+                    <p>Judges: <span class="answer">Yes</span></p>
+                    <p>Last Year venue : <span class="answer">Anna Auditorium</span></p>
+                </div>
+            </div>
+            <div class="p mt-3 row justify-content-center">
+                <div class="col-11">
+                    <p class="answer">Review by student:-</p>
+                    <p class="left-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been
+                        the
+                        industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                        scrambled it
+                        to
+                        make
+                        a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                        typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                        sheets
+                        containing
+                        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+                        including
+                        versions
+                        of Lorem Ipsum.
+
+                        Why do we use it?
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when
+                        looking at
+                        its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+                        letters,
+                        as
+                        opposed to using 'Content here, content here', making it look like readable English. Many
+                        desktop
+                        publishing
+                        packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                        'lorem
+                        ipsum'
+                        will uncover many web sites still in their infancy. Various versions have evolved over the
+                        years,
+                        sometimes
+                        by
+                        accident, sometimes on purpose (injected humour and the like).</p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class=" hack-2">
+            <div style="margin:0;padding:0;" class="row">
+
+                <div class="col-md-6 col-xs-12">
+                    <div class="mb-3 img-cont">
+                        <img src="/images/480x360.png" class="image img-responsive">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>Code 2 Create</h1>
+                    <p>Duration :<span class="answer"></span></p>
+                    <p>On Duty :<span class="answer"></span></p>
+                    <p>Food : <span class="answer">Pizza and other snacks</span> </p>
+                    <p>Judges: <span class="answer">Yes</span></p>
+                    <p>Last Year venue : <span class="answer">Anna Auditorium</span></p>
+                </div>
+            </div>
+            <div class="p mt-3 row justify-content-center">
+                <div class="col-11">
+                    <p class="answer">Review by student:-</p>
+                    <p class="left-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been
+                        the
+                        industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                        scrambled it
+                        to
+                        make
+                        a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                        typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                        sheets
+                        containing
+                        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+                        including
+                        versions
+                        of Lorem Ipsum.
+
+                        Why do we use it?
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when
+                        looking at
+                        its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+                        letters,
+                        as
+                        opposed to using 'Content here, content here', making it look like readable English. Many
+                        desktop
+                        publishing
+                        packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                        'lorem
+                        ipsum'
+                        will uncover many web sites still in their infancy. Various versions have evolved over the
+                        years,
+                        sometimes
+                        by
+                        accident, sometimes on purpose (injected humour and the like).</p>
+
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </main>
 <%- include("partials/footer"); %>

@@ -175,7 +175,6 @@
                                 <% if(place.cuisine && (place.cuisine).length > 2) { %>
                                 <p class="cuisine restraunt-list-card-font">Cuisine : <%= place.cuisine %></p>
                                 <% } %>
-
                                 <p class="restraunt-list-card-font">Near : <%= place.nearby %></p>
                                 <% if(place.ac && (place.ac).length > 2) { %>
                                 <p class="restraunt-list-card-font">AC : <%= place.ac %></p>
@@ -187,6 +186,7 @@
                                 <% }else{ %>
                                 <p class="restraunt-list-card-font">&nbsp </p>
                                 <% } %>
+                                <p style="visibility: hidden; font-size:1px;"><%= place.subtype %></p>
                             </div>
                             <form action="/<%= place.type %>/<%= place._id %>">
                                 <div style="margin:0;" class=" row">
