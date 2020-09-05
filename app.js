@@ -295,6 +295,10 @@ app.get("/lifehacks", function (req, res) {
     res.render("lifehacks");
 });
 
+app.get("/hackathons", function (req, res) {
+    res.render("hackathons");
+});
+
 app.listen(process.env.PORT || 3000, process.env.ID, function (req, res) {
     console.log("Server has started for Papaspot at PORT 3000");
 });
