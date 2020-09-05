@@ -27,10 +27,6 @@
                         <label for="message-text" class="col-form-label">Comment:</label>
                         <textarea class="form-control" name="comment_content" id="comment" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Instagram Id Link</label>
-                        <input type="text" name="insta_id" class="form-control" id="insta_id" required>
-                    </div>
                     <% var x= new Date(); %>
                     <div style="display:none;" class="form-group">
                         <label for="message-text" class="col-form-label">Today Date</label>
@@ -60,7 +56,6 @@
         </div>
     </div>
 </div>
-
 <div id="myModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="img01">
@@ -103,24 +98,22 @@
         <div class="row align-items-start justify-content-start">
             <div class="col-md-6 col-xs-12">
                 <h2 class="restraunt-h2 cursive"><%= place.name %></h2>
-                <p class="restraunt-p">Naerby : <%= place.nearby %></p>
+                <p class="restraunt-p">Location : <%= place.nearby %></p>
                 <%  var d = new Date();
-                    var hours  = d.getHours();
-                    var x = place.open_timings.split('-');
-                    if(hours > parseInt(x[0]) && hours < parseInt(x[1]))
-                    { %>
+                var hours  = d.getHours();
+                var x = place.open_timings.split('-');
+                if(hours > parseInt(x[0]) && hours < parseInt(x[1]))
+                { %>
                 <p class="restraunt-p">Timings : <%= place.open_timings %> &nbsp <span style="color:green">(Open
                         Now)</span></p>
                 <% }else {%>
                 <p class="restraunt-p">Timings : <%= place.open_timings %> &nbsp <span style="color:red">(Closed
                         Now)</span></p>
                 <% } %>
-
-                <p class="restraunt-p">Cost for two : Rs.<%= place.cost_for_two %></p>
-                <p class="restraunt-p">Payment Method : <%= place.payment_method %></p>
                 <% if(place.crowd && (place.crowd).length > 2) { %>
                 <p class="restraunt-p">AC : <%= place.crowd %></p>
                 <% } %>
+                <p class="restraunt-p">Mode of Travel : Rentals</p>
                 <div class="restraunt-buttons-1">
                     <a href="#" style="color:white;display:inline;" class=" btn btn-danger">Directions</a>
                     <a href="#" class="btn restraunt-btn-2">Share Link</a>
@@ -128,15 +121,8 @@
             </div>
             <div class=" col-md-6 col-xs-12">
                 <h2 class="restraunt-h2 cursive">Rating</h2>
-
-                <p>Rating:<% for(var i=1;i<=parseInt(place.rating);i++){ %>
-
-                    <i class="fa fa-star"></i>
-                    <% } %>
-                    <% if(place.rating - parseInt(place.rating) > 0){%>
-                    <i class="fas fa-star-half"></i>
-                    <% } %>
-                </p>
+                <p>Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                        class="fa fa-star"></i><i class="fas fa-star-half"></i></p>
                 <% if(place.must_try && (place.must_try).length >2) { %>
                 <p><span style="color:red;">Must Try: </span><%= place.must_try %></p>
                 <% } %>
@@ -151,7 +137,6 @@
                 <% } %>
 
 
-
             </div>
         </div>
         <hr style="width:100%;" class="style-two">
@@ -159,29 +144,29 @@
             <div class=" col-md-4 col-xs-12">
                 <div style=" width:100%;height:30px;border:1px #31d451 solid;background-color:#31d451;">
                     <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
-                        Super Clean</p>
+                        Fresh Air</p>
                 </div>
             </div>
             <div class=" col-md-4 col-xs-12">
                 <div style=" width:100%;height:30px;border:1px #322ebf solid;background-color:#322ebf;">
                     <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
-                        Best for Wallet</p>
+                        Superb View</p>
                 </div>
             </div>
             <div class=" col-md-4 col-xs-12 ">
                 <div style=" width:100%;height:30px;border:1px #debd28 solid;background-color:#debd28;">
                     <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
-                        Multi-Cuisine</p>
+                        Stress Buster</p>
                 </div>
             </div>
         </div>
         <div id="menuimgs" class="section">
             <div class="row ">
                 <div class=" div-restraunt-h2 col-md-6 col-xs-12">
-                    <h2 class="restraunt-h2 cursive">Menu</h2>
+                    <h2 class="restraunt-h2 cursive">Memories</h2>
                 </div>
             </div>
-            <div class=" row justify-content-center">
+            <div class="row justify-content-center">
                 <div class="col-4 row justify-content-center">
                     <a class="lightbox" href="#menu-1">
                         <img class="img-responsive" src="/images/<%= place.identity %>-menu-1.png" />
@@ -231,13 +216,9 @@
         <div class="Section">
             <h2 class="restraunt-h2 cursive">What others are saying about this place</h2>
             <ul class="comment-section">
-                <% var i =0 ;place.comments.forEach(function(comment){ i++;%>
-                <% if(i %2 === 0) { %>
-                <li class="comment author-comment">
-                    <%}else { %>
+                <% place.comments.forEach(function(comment){ console.log(comment);%>
                 <li class="comment user-comment">
-                    <% } %>
-
+                    <!-- author-comment for right aligned comment -->
                     <div class="info">
                         <a href="#"><%= comment.author_name %></a>
                         <span><%= comment.date %></span>
@@ -249,7 +230,6 @@
                     <p><%= comment.content %> </p>
                 </li>
                 <% }); %>
-
                 <li class="comment user-comment">
                     <div style="visibility:hidden  ;" class="info">
                         <a href="#">Add Comment</a>
@@ -296,7 +276,6 @@
         </div>
     </section>
 </div>
-
 
 
 <div class="lightbox-target" id="menu-1">
