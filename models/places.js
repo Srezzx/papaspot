@@ -19,7 +19,7 @@ var placesSchema = new mongoose.Schema({
     ac: String,
     eta: String,
     mode_of_transport: String,
-
+    website: String,
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comments"

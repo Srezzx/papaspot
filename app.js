@@ -218,7 +218,8 @@ app.post("/kadabra/restaurant/new/:id", function (req, res) {
             ac: req.body.ac,
             crowd: req.body.crowd,
             mode_of_transport: req.body.mode_of_transport,
-            eta: req.body.eta
+            eta: req.body.eta,
+            website: req.body.website
         }
         var nC = {
             author_name: req.body.comment_author,

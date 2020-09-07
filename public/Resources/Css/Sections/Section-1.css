@@ -4,7 +4,6 @@
     color: white;
     border-radius: 5px;
     text-decoration: none;
-    margin-left: 2rem;
     border: 1px #f35730 solid;
 
 }
@@ -45,5 +44,17 @@ a.btn-1 {
 
     .section-1-p {
         font-size: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .section-1-p {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:992px) {
+    .img-1 {
+        width: 110%;
     }
 }
