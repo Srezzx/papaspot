@@ -215,7 +215,7 @@ app.post("/kadabra/restaurant/new/:id", function (req, res) {
             cuisine: req.body.cuisine,
             payment_method: req.body.payment_method,
             cost_for_two: req.body.cost_for_two,
-            musts_try: req.body.musts_try,
+            must_try: req.body.must_try,
             gmap_src: req.body.gmap_src,
             features: req.body.features,
             open_timings: req.body.open_timings,

@@ -140,26 +140,28 @@
             </div>
         </div>
         <hr style="width:100%;" class="style-two">
+        <% if(place.features) {var x = place.features.split('-')%>
         <div class="my-1 row justify-content-start restraunt-features">
             <div class=" col-md-4 col-xs-12">
-                <div style=" width:100%;height:30px;border:1px #31d451 solid;background-color:#31d451;">
+                <div style=" width:100%;height:30px;border:1px #b9ffb3 solid;background-color:#edffeb;">
                     <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
-                        Fresh Air</p>
+                        <%= x[0] %></p>
                 </div>
             </div>
             <div class=" col-md-4 col-xs-12">
-                <div style=" width:100%;height:30px;border:1px #322ebf solid;background-color:#322ebf;">
+                <div style=" width:100%;height:30px;border:1px #b9ffb3 solid;background-color:#edffeb;">
                     <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
-                        Superb View</p>
+                        <%= x[1] %></p>
                 </div>
             </div>
             <div class=" col-md-4 col-xs-12 ">
-                <div style=" width:100%;height:30px;border:1px #debd28 solid;background-color:#debd28;">
+                <div style=" width:100%;height:30px;border:1px #b9ffb3 solid;background-color:#edffeb;">
                     <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
-                        Stress Buster</p>
+                        <%= x[2] %></p>
                 </div>
             </div>
         </div>
+        <% } %>
         <div id="menuimgs" class="section">
             <div class="row ">
                 <div class=" div-restraunt-h2 col-md-6 col-xs-12">

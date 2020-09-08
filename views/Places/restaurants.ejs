@@ -119,7 +119,7 @@
                 <p class="restraunt-p">Cost for two : Rs.<%= place.cost_for_two %></p>
                 <p class="restraunt-p">Payment Method : <%= place.payment_method %></p>
                 <% if(place.crowd && (place.crowd).length > 2) { %>
-                <p class="restraunt-p">AC : <%= place.crowd %></p>
+                <p class="restraunt-p">Crowd : <%= place.crowd %></p>
                 <% } %>
                 <div class="restraunt-buttons-1">
                     <a href="#" style="color:white;display:inline;" class=" btn btn-danger">Directions</a>
@@ -150,31 +150,31 @@
                 <p class="restraunt-p">AC : <%= place.ac %></p>
                 <% } %>
 
-
-
             </div>
         </div>
         <hr style="width:100%;" class="style-two">
+        <% if(place.features &&  place.features !== "" && place.features.toLowerCase() !== "NA" && place.features !== "-") {var x = place.features.split('-')%>
         <div class="my-1 row justify-content-start restraunt-features">
             <div class=" col-md-4 col-xs-12">
-                <div style=" width:100%;height:30px;border:1px #31d451 solid;background-color:#31d451;">
+                <div style=" width:100%;height:30px;border:1px #b9ffb3 solid;background-color:#edffeb;">
                     <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
-                        Super Clean</p>
+                        <%= x[0] %></p>
                 </div>
             </div>
             <div class=" col-md-4 col-xs-12">
-                <div style=" width:100%;height:30px;border:1px #322ebf solid;background-color:#322ebf;">
+                <div style=" width:100%;height:30px;border:1px #b9ffb3 solid;background-color:#edffeb;">
                     <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
-                        Best for Wallet</p>
+                        <%= x[1] %></p>
                 </div>
             </div>
             <div class=" col-md-4 col-xs-12 ">
-                <div style=" width:100%;height:30px;border:1px #debd28 solid;background-color:#debd28;">
+                <div style=" width:100%;height:30px;border:1px #b9ffb3 solid;background-color:#edffeb;">
                     <p style="color:rgb(37, 37, 37);text-align: center;vertical-align: middle;line-height: 30px;  ">
-                        Multi-Cuisine</p>
+                        <%= x[2] %></p>
                 </div>
             </div>
         </div>
+        <% } %>
         <div id="menuimgs" class="section">
             <div class="row ">
                 <div class=" div-restraunt-h2 col-md-6 col-xs-12">

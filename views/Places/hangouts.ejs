@@ -316,7 +316,8 @@
                 </div>
             </div>
             <hr style="width:100%;" class="style-two">
-            <% var x = place.features.split('-')%>
+
+            <% if(place.features) {var x = place.features.split('-')%>
             <div class="my-1 row justify-content-start restraunt-features">
                 <div class=" col-md-4 col-xs-12">
                     <div style=" width:100%;height:30px;border:1px #b9ffb3 solid;background-color:#edffeb;">
@@ -337,6 +338,7 @@
                     </div>
                 </div>
             </div>
+            <% } %>
             <div id="menuimgs" class="section">
                 <div class="row ">
                     <div class=" div-restraunt-h2 col-md-6 col-xs-12">
