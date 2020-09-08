@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 var Swal = require('sweetalert2');
+
 app.set("view engine", "ejs");
 
 
@@ -8,6 +9,9 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+
+var nodemailer = require('nodemailer');
 
 var Places = require("./models/places");
 var Comments = require("./models/comments");
@@ -290,6 +294,33 @@ app.post("/comments/request/:id", function (req, res) {
             res.redirect("/restaurant/" + req.params.id)
         }
     });
+});
+
+app.post("/mail/send", function (req, res) {
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'websitetest4334@gmail.com',
+            pass: 'Asdfghjkl123!'
+        }
+    });
+
+    var mailOptions = {
+        from: 'websitetest4334@gmail.com',
+        to: 'srieshimportant@gmail.com',
+        subject: 'Inquiry in VIT Atlas',
+        text: 'Inquiry by - ' + req.body.name + '|||||||||||||||||||||||||||| Phone Number -' + req.body.phonenumber + '||||||||||||||||||||||| Email Address - ' + req.body.email + '||||||||||||||||||||||||| Inquiry  - ' + req.body.message
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+
+    res.redirect("/#contactpage");
 });
 
 app.get("/lifehacks", function (req, res) {

@@ -4,6 +4,26 @@
     .h-color {
         color: #f35730;
     }
+
+    label {
+        color: white;
+        padding-bottom: 1rem;
+    }
+
+    @media only screen and (max-width:992px) {
+        label {
+            color: white;
+            padding-bottom: 0.5rem;
+            font-size: 90%;
+        }
+
+        input {
+            margin-bottom: 1rem;
+            border-radius: 0;
+            border: none;
+        }
+
+    }
 </style>
 <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -312,4 +332,51 @@
             <img style="width:100%;height:100%;" src="/images/hackathonposter.jpeg"> </div>
     </div>
 </div> -->
+
+<div style=" background-color: rgba(10,10, 10, 0.1);
+background-blend-mode: lighten; background-image: url('images/contactus-4.jpg');background-repeat: no-repeat;
+background-size: cover;" id="contactpage" class="contactpage section pt-1 mb-5 pb-5">
+    <div class="row justify-content-center">
+        <h1 class="cursive h-color pt-5">Contact Us anytime</h1>
+    </div>
+    <hr class="style-two">
+    <form action="/mail/send" method="POST">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-12">
+                    <label>Name</label>
+                    <input style="border-radius: 0;
+                border: none;" class="form-control" type="text" name="name" required>
+                </div>
+                <div class="col-lg-3 col-md-12">
+                    <label>Phone Number</label>
+                    <input style="border-radius: 0;
+                border: none;" class="form-control" name="phonenumber" type="text">
+                </div>
+                <div class="col-lg-3 col-md-12">
+                    <label>Email</label>
+                    <input style="border-radius: 0;
+                border: none;" class="form-control" name="email" type="text" required>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-xs-12 col-lg-9">
+                    <label>Message</label>
+                    <textarea style="border-radius: 0;
+                border: none;height:100%;" name="message" class="form-control" type="text" required></textarea>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="pt-5 col-3">
+                    <div class="form-group row justify-content-center">
+                        <button style="border-radius:0;" type="submit" id="sendmailbtn"
+                            class="sendmailbtn btn btn-info px-5">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
 <%- include("partials/footer"); %>
