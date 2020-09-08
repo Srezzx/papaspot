@@ -39,7 +39,9 @@ var methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
 app.get("/", function (req, res) {
-    res.render("index");
+    res.render("index", {
+        message: ""
+    });
 });
 
 
@@ -300,14 +302,14 @@ app.post("/mail/send", function (req, res) {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'websitetest4334@gmail.com',
+            user: 'papaspot1234@gmail.com',
             pass: 'Asdfghjkl123!'
         }
     });
 
     var mailOptions = {
         from: 'websitetest4334@gmail.com',
-        to: 'srieshimportant@gmail.com',
+        to: 'papaspot1234@gmail.com',
         subject: 'Inquiry in VIT Atlas',
         text: 'Inquiry by - ' + req.body.name + '|||||||||||||||||||||||||||| Phone Number -' + req.body.phonenumber + '||||||||||||||||||||||| Email Address - ' + req.body.email + '||||||||||||||||||||||||| Inquiry  - ' + req.body.message
     };

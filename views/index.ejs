@@ -335,13 +335,20 @@
 
 <div style=" background-color: rgba(10,10, 10, 0.1);
 background-blend-mode: lighten; background-image: url('images/contactus-4.jpg');background-repeat: no-repeat;
-background-size: cover;" id="contactpage" class="contactpage section pt-1 mb-5 pb-5">
+background-size: cover;" id="contactpage" class="contactpage section pt-1  pb-5">
     <div class="row justify-content-center">
         <h1 class="cursive h-color pt-5">Contact Us anytime</h1>
     </div>
     <hr class="style-two">
     <form action="/mail/send" method="POST">
         <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <div class="row justify-content-center">
+                        <p style="background-color:rgba(26, 255, 0, 0.7)" class="flashp" id="flashp"></p>
+                    </div>
+                </div>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-12">
                     <label>Name</label>
@@ -378,5 +385,6 @@ background-size: cover;" id="contactpage" class="contactpage section pt-1 mb-5 p
     </form>
 
 </div>
+
 
 <%- include("partials/footer"); %>
