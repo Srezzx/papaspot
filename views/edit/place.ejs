@@ -5,136 +5,20 @@
         font-size: 2rem;
     }
 </style>
+<h1 style="margin-top:5rem;text-align:center;">Choose PLace</h1>
 
 <div style="margin-top:15rem;" class="container">
-    <form action="/kadabra/restaurant/edit" method="POST">
-        <h1>Add a place</h1>
-        <div class="row">
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="String" placeholder="Enter Name of Place" name="name" class="form-control" required>
-                </div>
+    <div class="row">
+        <% allplaces.forEach(function(place){ %>
+        <form action="/kadabra/edit/<%= place._id%>" method="GET">
+            <div class="col-md-12 col-xs-12">
+                <button style="width:100%; margin:10px;" type="submit"
+                    class="btn btn-success"><%= place.name %></button>
             </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Type</label>
-                    <select id="type" name="type" class="browser-default custom-select" required>
-                        <option hidden disabled Selected value="">Select Type</option>
-                        <option value="restaurant">Restaurant</option>
-                        <option value="entertainment">Entertainment</option>
-                        <option value="outing">Outing</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Rating</label>
-                    <input type="Number" step='0.01' placeholder="Enter rating out of 5" name="rating"
-                        class="form-control" required>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Nearby</label>
-                    <input type="String" placeholder="Enter nearby landmark" name="nearby" class="form-control"
-                        required>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Cuisine</label>
-                    <input type="String" placeholder="Enter types of food available" name="cusine" class="form-control"
-                        required>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Payment Method</label>
-                    <input type="String" placeholder="Enter payment methods available" name="payment_method"
-                        class="form-control" required>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Cost For 2</label>
-                    <input type="String" placeholder="Enter Cost for 2 people" name="cost_for_two" class="form-control"
-                        required>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Must Try</label>
-                    <input type="String" placeholder="Enter special must try dishes" name="must_try"
-                        class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Google Map source</label>
-                    <input type="String" placeholder="Enter Google Map source" name="gmap_src" class="form-control"
-                        required>
-                </div>
-            </div>
-            <div class="form-group col-md-6 col-xs-12">
-                <label>Inside/Outside campus</label>
-                <select id="io_location" name="io_location" class="browser-default custom-select" required>
-                    <option hidden disabled Selected value="">Select Inside/Outside Campus</option>
-                    <option value="inside">Inside Campus</option>
-                    <option value="outside">Outside Campus</option>
-                </select>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Identity</label>
-                    <input type="String" placeholder="Enter restraunt name in small without spaces" name="identity"
-                        class="form-control" required>
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Open Timings</label>
-                    <input type="String"
-                        placeholder="Enter timings seperated by a '-' (24 hr clock) and multiple by a ','"
-                        name="open_timings" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>ETA</label>
-                    <input type="Number" placeholder="Enter estimated time of arrival" name="eta" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Mode of Transport</label>
-                    <input type="String" placeholder="Enter mode of transport" name="mode_of_transport"
-                        class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Crowd</label>
-                    <input type="String" placeholder="Choose averge crowd condition" name="crowd" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Air Conditioner</label>
-                    <input type="String" placeholder="Choose weather it has ac or not" name="ac" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="form-group">
-                    <label>Features</label>
-                    <input type="String" placeholder="Enter 3  Features seperated by - (no space bet. features)"
-                        name="features" class="form-control" required>
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-success">Add Place</button>
-    </form>
-
+        </form>
+        <% }) %>
+    </div>
 </div>
+
 
 <%- include("../partials/footer"); %>

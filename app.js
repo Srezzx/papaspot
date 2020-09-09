@@ -126,6 +126,39 @@ app.get("/utilities", function (req, res) {
     });
 });
 
+
+//EDIT PLACE ROUTES
+
+app.get("/kadabra/edit", function (req, res) {
+    Places.find({}, function (err, allplaces) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("edit/place", {
+                allplaces: allplaces
+            });
+        }
+    });
+});
+
+app.get("/kadabra/edit/:id", function (req, res) {
+    Places.findById(req.params.id, function (err, foundplace) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("edit/editplacebyid", {
+                foundplace: foundplace
+            })
+        }
+    });
+});
+
+
+
+
+
+
+//FAQ ROUTES
 app.get("/faq", function (req, res) {
     faq.find({}, function (err, allFaq) {
         if (err) {
