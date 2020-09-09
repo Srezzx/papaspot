@@ -1,7 +1,9 @@
 var express = require("express");
 var app = express();
 var Swal = require('sweetalert2');
-
+var passport = require("passport");
+var LocalStrategy = require("passport-local").Strategy;
+var Admin = require("./models/admin");
 app.set("view engine", "ejs");
 
 
@@ -24,8 +26,9 @@ app.use(express.static(__dirname + "/public/images"));
 var mongoose = require("mongoose");
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
+// mongodb+srv://Srezz:E0Y550F4bZhiXLeX@cluster0-oshu0.mongodb.net/todolist?retryWrites=true&w=majority
 //mongoose.connect("mongodb://localhost/YelpCamp"); //-- for local database
-mongoose.connect("mongodb+srv://Srezz:E0Y550F4bZhiXLeX@cluster0-oshu0.mongodb.net/todolist?retryWrites=true&w=majority", {
+mongoose.connect("mongodb://127.0.0.1:27017/Papaspot", {
     useNewUrlParser: true,
     useCreateIndex: true
 }).then(() => {
@@ -43,6 +46,38 @@ app.get("/", function (req, res) {
         message: ""
     });
 });
+
+// ------Passport Config--------------
+app.use(require("express-session")({
+    secret: "Some random static text",
+    resave: false,
+    saveUninitialized: false
+}));
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(Admin.authenticate()));
+
+passport.serializeUser(Admin.serializeUser());
+passport.deserializeUser(Admin.deserializeUser());
+
+app.use(function (req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+});
+
+// ------------------Middleware-------------------
+
+const isLoggedIn = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    return res.render("admin/error");
+}
+
+// ------------------Middleware-------------------
 
 
 app.get("/restaurant/:id", function (req, res) {
@@ -187,6 +222,54 @@ app.post("/faq/new", function (req, res) {
         }
     })
 });
+
+// -----------Admin Authentication------------------
+
+app.get("/admin-login", function (req, res) {
+    res.render("admin/login");
+});
+
+app.get("/admin-signup", function (req, res) {
+    res.render("admin/signup");
+});
+
+app.post("/admin-login", passport.authenticate("local", {
+    successRedirect: "/kadabra",
+    failureRedirect: "/admin-login",
+}), function (req, res) {});
+
+
+app.post("/admin-signup", function (req, res) {
+    const username = req.body.username;
+    Admin.findOne({
+            username: username
+        })
+        .then(admin => {
+            if (admin) {
+                return res.render("admin/error");
+            } else {
+                Admin.register({
+                    username: username
+                }, req.body.password, function (err, admin) {
+                    if (err) {
+                        console.log(err);
+                        return res.redirect("/admin-signup");
+                    } else {
+                        passport.authenticate("local")(req, res, function () {
+                            res.redirect("/kadabra");
+                        });
+                    }
+                });
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res.redirect("/admin-signup");
+        })
+});
+
+// -----------Admin Authentication------------------
+
 
 app.get("/faq/editByAdmin", function (req, res) {
     faq.find({}, function (err, allFaq) {
