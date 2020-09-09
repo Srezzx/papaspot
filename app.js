@@ -28,7 +28,7 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 // mongodb+srv://Srezz:E0Y550F4bZhiXLeX@cluster0-oshu0.mongodb.net/todolist?retryWrites=true&w=majority
 //mongoose.connect("mongodb://localhost/YelpCamp"); //-- for local database
-mongoose.connect("mongodb://127.0.0.1:27017/Papaspot", {
+mongoose.connect(" mongodb+srv://Srezz:E0Y550F4bZhiXLeX@cluster0-oshu0.mongodb.net/todolist?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useCreateIndex: true
 }).then(() => {
@@ -229,44 +229,44 @@ app.get("/admin-login", function (req, res) {
     res.render("admin/login");
 });
 
-app.get("/admin-signup", function (req, res) {
-    res.render("admin/signup");
-});
+// app.get("/admin-signup", function (req, res) {
+//     res.render("admin/signup");
+// });
 
 app.post("/admin-login", passport.authenticate("local", {
-    successRedirect: "/kadabra",
+    successRedirect: "/",
     failureRedirect: "/admin-login",
 }), function (req, res) {});
 
 
-app.post("/admin-signup", function (req, res) {
-    const username = req.body.username;
-    Admin.findOne({
-            username: username
-        })
-        .then(admin => {
-            if (admin) {
-                return res.render("admin/error");
-            } else {
-                Admin.register({
-                    username: username
-                }, req.body.password, function (err, admin) {
-                    if (err) {
-                        console.log(err);
-                        return res.redirect("/admin-signup");
-                    } else {
-                        passport.authenticate("local")(req, res, function () {
-                            res.redirect("/kadabra");
-                        });
-                    }
-                });
-            }
-        })
-        .catch(err => {
-            console.log(err);
-            res.redirect("/admin-signup");
-        })
-});
+// app.post("/admin-signup", function (req, res) {
+//     const username = req.body.username;
+//     Admin.findOne({
+//             username: username
+//         })
+//         .then(admin => {
+//             if (admin) {
+//                 return res.render("admin/error");
+//             } else {
+//                 Admin.register({
+//                     username: username
+//                 }, req.body.password, function (err, admin) {
+//                     if (err) {
+//                         console.log(err);
+//                         return res.redirect("/admin-signup");
+//                     } else {
+//                         passport.authenticate("local")(req, res, function () {
+//                             res.redirect("/kadabra");
+//                         });
+//                     }
+//                 });
+//             }
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.redirect("/admin-signup");
+//         })
+// });
 
 // -----------Admin Authentication------------------
 
