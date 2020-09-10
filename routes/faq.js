@@ -69,6 +69,7 @@ router.put("/faq/editByAdmin/:id", function (req, res) {
     })
 });
 
+
 router.delete("/faq/editByAdmin/:id", function (req, res) {
     faq.findByIdAndDelete(req.params.id, function (err) {
         if (err) {

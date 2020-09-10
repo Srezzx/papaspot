@@ -116,6 +116,39 @@ app.get("/kadabra/edit/:id", function (req, res) {
     });
 });
 
+app.post("/kadabra/edit/:id", function (req, res) {
+    var nP = {
+        name: req.body.name,
+        type: req.body.type,
+        sub_type: req.body.sub_type,
+        rating: req.body.rating,
+        nearby: req.body.nearby,
+        cuisine: req.body.cuisine,
+        payment_method: req.body.payment_method,
+        cost_for_two: req.body.cost_for_two,
+        must_try: req.body.must_try,
+        gmap_src: req.body.gmap_src,
+        features: req.body.features,
+        open_timings: req.body.open_timings,
+        identity: req.body.identity,
+        io_location: req.body.io_location,
+        ac: req.body.ac,
+        crowd: req.body.crowd,
+        mode_of_transport: req.body.mode_of_transport,
+        eta: req.body.eta,
+        website: req.body.website
+    }
+    Places.findByIdAndUpdate(req.params.id, nP, function (err, updatedplace) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("++++++++++++++++++++");
+            console.log(updatedplace);
+        }
+    });
+    res.redirect("/kadabra/edit");
+});
+
 app.get("/kadabra", function (req, res) {
     Places.find({}, function (err, allplaces) {
         if (err) {
@@ -222,6 +255,32 @@ app.post("/comments/request/:id", function (req, res) {
         }
     });
 });
+
+app.put("/faq/editByAdmin/:id", function (req, res) {
+    const answer = req.body.answer;
+    faq.findByIdAndUpdate(req.params.id, {
+        answer: answer
+    }, function (err, updatedFaq) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(updatedFaq);
+            res.redirect("/faq/editByAdmin");
+        }
+    })
+});
+
+app.delete("/faq/editByAdmin/:id", function (req, res) {
+    faq.findByIdAndDelete(req.params.id, function (err) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect("/faq/editByAdmin");
+        }
+    })
+});
+
+
 
 app.post("/mail/send", function (req, res) {
     var transporter = nodemailer.createTransport({

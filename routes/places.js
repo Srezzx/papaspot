@@ -61,7 +61,6 @@ router.get("/restaurants", function (req, res) {
             });
         }
     });
-
 });
 
 router.get("/hangouts", function (req, res) {
