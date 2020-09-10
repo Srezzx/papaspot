@@ -3,7 +3,7 @@ var app = express();
 var Swal = require('sweetalert2');
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
-var Admin = require("./models/admin");
+
 app.set("view engine", "ejs");
 
 
@@ -12,13 +12,24 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-
 var nodemailer = require('nodemailer');
-
+//MODELS
+var Admin = require("./models/admin");
 var Places = require("./models/places");
 var Comments = require("./models/comments");
 var userEntry = require("./models/userentry");
 var faq = require("./models/faq");
+
+//ROUTES
+var adminRoutes = require("./routes/admin");
+var faqRoutes = require("./routes/faq");
+var staticRoutes = require("./routes/static");
+var placesRoutes = require("./routes/places");
+app.use(adminRoutes);
+app.use(faqRoutes);
+app.use(staticRoutes);
+app.use(placesRoutes);
+
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/public/images"));
@@ -79,89 +90,6 @@ const isLoggedIn = function (req, res, next) {
 
 // ------------------Middleware-------------------
 
-
-app.get("/restaurant/:id", function (req, res) {
-    var id = mongoose.Types.ObjectId(req.params.id);
-    Places.findById(id).populate("comments").exec(function (err, place) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("Places/restaurants", {
-                place: place
-            });
-        }
-    });
-});
-
-app.get("/hangouts/:id", function (req, res) {
-    var id = mongoose.Types.ObjectId(req.params.id);
-    Places.findById(id).populate("comments").exec(function (err, place) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("Places/hangouts", {
-                place: place
-            });
-        }
-    });
-});
-
-app.get("/utilities/:id", function (req, res) {
-    var id = mongoose.Types.ObjectId(req.params.id);
-    Places.findById(id).populate("comments").exec(function (err, place) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("Places/utilities", {
-                place: place
-            });
-        }
-    });
-});
-
-
-app.get("/restaurants", function (req, res) {
-    Places.find({}, function (err, allplaces) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("listofplaces", {
-                show: 'restaurant',
-                allplaces: allplaces
-            });
-        }
-    });
-
-});
-
-app.get("/hangouts", function (req, res) {
-    Places.find({}, function (err, allplaces) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("listofplaces", {
-                show: 'hangouts',
-                allplaces: allplaces
-            });
-        }
-    });
-});
-
-
-app.get("/utilities", function (req, res) {
-    Places.find({}, function (err, allplaces) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("listofplaces", {
-                show: 'utilities',
-                allplaces: allplaces
-            });
-        }
-    });
-});
-
-
 //EDIT PLACE ROUTES
 
 app.get("/kadabra/edit", function (req, res) {
@@ -187,125 +115,6 @@ app.get("/kadabra/edit/:id", function (req, res) {
         }
     });
 });
-
-
-
-
-
-
-//FAQ ROUTES
-app.get("/faq", function (req, res) {
-    faq.find({}, function (err, allFaq) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("faq/faq", {
-                faqs: allFaq
-            });
-        }
-    })
-});
-
-app.post("/faq/new", function (req, res) {
-    var name = req.body.name;
-    var email = req.body.email;
-    var question = req.body.question;
-    var newFaq = {
-        question: question
-    };
-    faq.create(newFaq, function (err, newFaq) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log(newFaq);
-            res.redirect("/faq");
-        }
-    })
-});
-
-// -----------Admin Authentication------------------
-
-app.get("/admin-login", function (req, res) {
-    res.render("admin/login");
-});
-
-// app.get("/admin-signup", function (req, res) {
-//     res.render("admin/signup");
-// });
-
-app.post("/admin-login", passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/admin-login",
-}), function (req, res) {});
-
-
-// app.post("/admin-signup", function (req, res) {
-//     const username = req.body.username;
-//     Admin.findOne({
-//             username: username
-//         })
-//         .then(admin => {
-//             if (admin) {
-//                 return res.render("admin/error");
-//             } else {
-//                 Admin.register({
-//                     username: username
-//                 }, req.body.password, function (err, admin) {
-//                     if (err) {
-//                         console.log(err);
-//                         return res.redirect("/admin-signup");
-//                     } else {
-//                         passport.authenticate("local")(req, res, function () {
-//                             res.redirect("/kadabra");
-//                         });
-//                     }
-//                 });
-//             }
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.redirect("/admin-signup");
-//         })
-// });
-
-// -----------Admin Authentication------------------
-
-
-app.get("/faq/editByAdmin", function (req, res) {
-    faq.find({}, function (err, allFaq) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("faq/editFaq", {
-                faqs: allFaq
-            });
-        }
-    })
-});
-
-app.put("/faq/editByAdmin/:id", function (req, res) {
-    const answer = req.body.answer;
-    faq.findByIdAndUpdate(req.params.id, {
-        answer: answer
-    }, function (err, updatedFaq) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log(updatedFaq);
-            res.redirect("/faq/editByAdmin");
-        }
-    })
-});
-
-app.delete("/faq/editByAdmin/:id", function (req, res) {
-    faq.findByIdAndDelete(req.params.id, function (err) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.redirect("/faq/editByAdmin");
-        }
-    })
-})
 
 app.get("/kadabra", function (req, res) {
     Places.find({}, function (err, allplaces) {
@@ -439,14 +248,6 @@ app.post("/mail/send", function (req, res) {
     });
 
     res.redirect("/#contactpage");
-});
-
-app.get("/lifehacks", function (req, res) {
-    res.render("lifehacks");
-});
-
-app.get("/hackathons", function (req, res) {
-    res.render("hackathons");
 });
 
 app.listen(process.env.PORT || 3000, process.env.ID, function (req, res) {
