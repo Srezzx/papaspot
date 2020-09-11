@@ -19,6 +19,14 @@ router.get("/hackathons", function (req, res) {
     res.render("hackathons");
 });
 
+router.get("/googledrive", function (req, res) {
+    res.render("googledrive");
+});
+
+router.get("/shopping", function (req, res) {
+    res.render("shopping");
+});
+
 
 
 

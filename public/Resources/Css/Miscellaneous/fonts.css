@@ -1,6 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
+@keyframes bg {
+    0% {
+        background-size: 0 3px,
+            3px 0,
+            0 3px,
+            3px 0;
+    }
+
+    25% {
+        background-size: 100% 3px,
+            3px 0,
+            0 3px,
+            3px 0;
+    }
+
+    50% {
+        background-size: 100% 3px,
+            3px 100%,
+            0 3px,
+            3px 0;
+    }
+
+    75% {
+        background-size: 100% 3px,
+            3px 100%,
+            100% 3px,
+            3px 0;
+    }
+
+    100% {
+        background-size: 100% 3px,
+            3px 100%,
+            100% 3px,
+            3px 100%;
+    }
+}
+
+div.border-animation:hover {
+
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, #FFDF00 100%, #FFDF00 100%),
+        linear-gradient(to bottom, #FFDF00 100%, #FFDF00 100%),
+        linear-gradient(to right, #FFDF00 100%, #FFDF00 100%),
+        linear-gradient(to bottom, #FFDF00 100%, #FFDF00 100%);
+    background-size: 100% 3px,
+        3px 100%,
+        100% 3px,
+        3px 100%;
+    background-position: 0 0,
+        100% 0,
+        100% 100%,
+        0 100%;
+    animation: bg 2.25s cubic-bezier(0.19, 1, 0.22, 1) 1;
+    animation-play-state: paused;
+}
+
+div.border-animation:hover {
+    animation-play-state: running;
+}
+
 /* Font style -1 */
 h1.flicker-orange {
     font-size: calc(20px + 5vh);

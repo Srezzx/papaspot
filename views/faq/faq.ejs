@@ -233,65 +233,6 @@
 	:-ms-input-placeholder {
 		color: #888;
 	}
-
-	@keyframes bg {
-		0% {
-			background-size: 0 3px,
-				3px 0,
-				0 3px,
-				3px 0;
-		}
-
-		25% {
-			background-size: 100% 3px,
-				3px 0,
-				0 3px,
-				3px 0;
-		}
-
-		50% {
-			background-size: 100% 3px,
-				3px 100%,
-				0 3px,
-				3px 0;
-		}
-
-		75% {
-			background-size: 100% 3px,
-				3px 100%,
-				100% 3px,
-				3px 0;
-		}
-
-		100% {
-			background-size: 100% 3px,
-				3px 100%,
-				100% 3px,
-				3px 100%;
-		}
-	}
-
-	div.border-animation:hover {
-		background-repeat: no-repeat;
-		background-image: linear-gradient(to right, rgb(0, 0, 0, 0.1) 100%, rgb(0, 0, 0, 0.1) 100%),
-			linear-gradient(to bottom, rgb(0, 0, 0, 0.1) 100%, rgb(0, 0, 0, 0.1) 100%),
-			linear-gradient(to right, rgb(0, 0, 0, 0.1) 100%, rgb(0, 0, 0, 0.1) 100%),
-			linear-gradient(to bottom, rgb(0, 0, 0, 0.1) 100%, rgb(0, 0, 0, 0.1) 100%);
-		background-size: 100% 3px,
-			3px 100%,
-			100% 3px,
-			3px 100%;
-		background-position: 0 0,
-			100% 0,
-			100% 100%,
-			0 100%;
-		animation: bg 1.25 s cubic-bezier(0.19, 1, 0.22, 1) 1;
-		animation-play-state: paused;
-	}
-
-	div.border-animation:hover {
-		animation-play-state: running;
-	}
 </style>
 <script>
 	function showForm() {

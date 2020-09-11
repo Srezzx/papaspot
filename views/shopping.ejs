@@ -1,0 +1,274 @@
+<%- include("partials/header"); %>
+
+<style>
+    .date__box {
+        position: absolute;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #ccc;
+        border: 4px solid;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
+
+    .date__box .date__day {
+        font-size: 22px;
+    }
+
+    .blog-card {
+        padding: 30px;
+        position: relative;
+    }
+
+    .blog-card .date__box {
+        opacity: 0;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        -webkit-transition: 300ms ease-in-out;
+        transition: 300ms ease-in-out;
+    }
+
+    .blog-card .blog-card__background,
+    .blog-card .card__background--layer {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .blog-card .blog-card__background {
+        padding: 15px;
+        background: white;
+    }
+
+    .blog-card .card__background--wrapper {
+        height: 100%;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .blog-card .card__background--main {
+        height: 100%;
+        position: relative;
+        -webkit-transition: 300ms ease-in-out;
+        transition: 300ms ease-in-out;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .blog-card .card__background--layer {
+        z-index: 0;
+        opacity: 0;
+        background: rgba(51, 51, 51, 0.9);
+        -webkit-transition: 300ms ease-in-out;
+        transition: 300ms ease-in-out;
+    }
+
+    .blog-card .blog-card__head {
+        height: 300px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .blog-card .blog-card__info {
+        z-index: 10;
+        background: white;
+        padding: 20px 15px;
+    }
+
+    .blog-card .blog-card__info h5 {
+        -webkit-transition: 300ms ease-in-out;
+        transition: 300ms ease-in-out;
+    }
+
+    .blog-card:hover .date__box {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    .blog-card:hover .card__background--main {
+        -webkit-transform: scale(1.2) rotate(5deg);
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    .blog-card:hover .card__background--layer {
+        opacity: 1;
+    }
+
+    .blog-card:hover .blog-card__info h5 {
+        color: #f35730;
+    }
+
+    a.icon-link {
+        color: #363738;
+        -webkit-transition: 200ms ease-in-out;
+        transition: 200ms ease-in-out;
+    }
+
+    a.icon-link i {
+        color: #f35730;
+    }
+
+    a.icon-link:hover {
+        color: #f35730;
+        text-decoration: none;
+    }
+
+    .btn {
+        background: white;
+        color: #363738;
+        font-weight: bold;
+        outline: none;
+        -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        border-radius: 0;
+        height: 50px;
+        line-height: 50px;
+        display: inline-block;
+        padding: 0;
+        border: none;
+    }
+
+    .btn:focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .btn:hover {
+        background: #f35730;
+        color: #fff;
+    }
+
+    .btn.btn--with-icon {
+        padding-right: 20px;
+    }
+
+    .btn.btn--with-icon i {
+        padding: 0px 30px 0px 15px;
+        margin-right: 10px;
+        height: 50px;
+        line-height: 50px;
+        vertical-align: bottom;
+        color: white;
+        background: #f35730;
+        -webkit-clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+    }
+
+    .btn.btn--only-icon {
+        width: 50px;
+    }
+
+
+    .title {
+        margin-top: 7rem;
+        font-family: "Montserrat";
+        text-align: center;
+        color: #FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 1px;
+    }
+
+    h1.title-h1 {
+        background-image: url('/images/fire-2.gif');
+        background-size: cover;
+        color: transparent;
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
+        text-transform: uppercase;
+        font-size: 3rem;
+    }
+</style>
+<%
+var arr =[
+    {
+        name:"Pantaloons",
+        oneliner:"The best and reasonable collection of clothes in town",
+        specs:{
+            one:"Reasonable Price",
+            two:"Great collection",
+            three:"",
+            four:""
+        },
+        description:"Not very far from VIT. Accessible by auto. Go there and grab the best collection of clothes"
+    },
+    {
+        name:"Pantaloons",
+        oneliner:"The best and reasonable collection of clothes in town",
+        specs:{
+            one:"Reasonable Price",
+            two:"Great collection",
+            three:"",
+            four:""
+        },
+        description:"Not very far from VIT. Accessible by auto. Go there and grab the best collection of clothes"
+    }
+] %>
+
+<div class="title">
+    <h1 class="title-h1">Happiness is not in money, but in shopping.</h1>
+</div>
+<hr class="style-one">
+
+<% arr.forEach(function(element){%>
+<div class=" container mt-5 pt-5 ">
+    <div class="row">
+        <div class="col-12">
+            <article class="blog-card">
+                <div class="blog-card__background">
+                    <div class="card__background--wrapper">
+                        <div class="card__background--main" style="background-image: url('images/1.jpg');">
+                            <div class="card__background--layer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card__head">
+                    <span class="date__box">
+                        <span class="date__day"></span>
+                        <span class="date__month"><%= element.oneliner%></span>
+                    </span>
+                </div>
+                <div class="blog-card__info">
+                    <h5 style="text-align:center;"><%= element.name %></h5>
+                    <p>
+                        <a href="#" class="icon-link mr-3"><i
+                                class="fa fa-pencil-square-o"></i><%= element.specs.one %></a>
+                        <a href="#" class="icon-link"><i class="fa fa-comments-o"></i><%= element.specs.two %></a>
+                    </p>
+                    <p><%= element.description %></p>
+                    <a href="#" class="btn btn--with-icon"><i class="btn-icon fa fa-long-arrow-right"></i>READ MORE</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+<% }) %>
+
+<%- include("partials/footer"); %>

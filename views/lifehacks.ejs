@@ -153,102 +153,54 @@
         }
     } */
 </style>
-<% var count =0; %>
+<% var count =0; 
+var arr =[
+    
+    {
+        question:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        answer:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printertook a galley of type and scrambled it to make a type specimen book. It has survived not onlyfive centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsumpassages, and more recently with desktop publishing software like Aldus PageMaker includingversions of Lorem Ipsum."
+    },
+    {
+        question:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        answer:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printertook a galley of type and scrambled it to make a type specimen book. It has survived not onlyfive centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsumpassages, and more recently with desktop publishing software like Aldus PageMaker includingversions of Lorem Ipsum."
+    },
+    {
+        question:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        answer:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printertook a galley of type and scrambled it to make a type specimen book. It has survived not onlyfive centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsumpassages, and more recently with desktop publishing software like Aldus PageMaker includingversions of Lorem Ipsum."
+    }
+]
+%>
 <main>
     <div class="title">
         <h1>Cool Vit Life Hacks</h1>
     </div>
     <hr class="style-one">
     <div class="gradient-list">
-        <% count ++; %>
-        <div data-aos-offset="50" data-aos-duration="300" data-aos="fade" style="width:100%;" class=" list-style row ">
+        <% arr.forEach(function(element){
+          count ++; %>
+        <div data-aos-offset="50" data-aos-duration="300" data-aos="fade" style="width:100%;"
+            class="border-animation list-style row ">
             <div class="col-1 px-0">
                 <p class="countnumbers-p"><span class="countnumbers"><%= count %></span></p>
             </div>
             <div class="col-11 px-0">
                 <div class="row">
                     <div class="question col-12 ">
-                        <p class="question-p">Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit.</p>
+                        <p class="question-p"><%= element.question %></p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="lead col-12">Lorem Ipsum is simply dummy
-                        text of the printing and typesetting industry.
-                        Lorem
-                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                        took a galley of type and scrambled it to make a type specimen book. It has survived not only
-                        five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.
-
+                    <div class="lead col-12"><%= element.answer %>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <p style="padding-top:20px;color:grey   ;float:right">Answered By Ayushi Bansal</p>
+                        <p style="padding-top:20px;color:grey   ;float:right"></p>
                     </div>
                 </div>
             </div>
-
         </div>
-        <% count ++; %>
-        <div data-aos-offset="50" data-aos-duration="300" data-aos="fade" style="width:100%;" class=" list-style row ">
-            <div class="col-1 px-0">
-                <p class="countnumbers-p"><span class="countnumbers"><%= count %></span></p>
-            </div>
-            <div class="col-11 px-0">
-                <div class="row">
-                    <div class="question col-12 ">
-                        <p class="question-p">Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="lead col-12">Lorem Ipsum is simply dummy
-                        text of the printing and typesetting industry.
-                        Lorem
-                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                        took a galley of type and scrambled it to make a type specimen book. It has survived not only
-                        five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <% count ++; %>
-        <div data-aos-offset="50" data-aos-duration="300" data-aos="fade" style="width:100%;" class=" list-style row ">
-            <div class="col-1 px-0">
-                <p class="countnumbers-p"><span class="countnumbers"><%= count %></span></p>
-            </div>
-            <div class="col-11 px-0">
-                <div class="row">
-                    <div class="question col-12 ">
-                        <p class="question-p">Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="lead col-12">Lorem Ipsum is simply dummy
-                        text of the printing and typesetting industry.
-                        Lorem
-                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                        took a galley of type and scrambled it to make a type specimen book. It has survived not only
-                        five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        <% }); %>
     </div>
 </main>
 <%- include("partials/footer"); %>
