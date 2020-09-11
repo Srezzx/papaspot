@@ -24,6 +24,43 @@
         }
 
     }
+
+    
+    .hack-img{
+        background: url('/images/hackathonposter.jpeg');
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 420px;
+        -webkit-filter: brightness(100%);
+        -moz-filter: brightness(100%);
+        -o-filter: brightness(100%);
+        -ms-filter: brightness(100%);
+        filter: brightness(100%);
+        -moz-transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .hack-img:hover {
+        -webkit-filter: brightness(60%);
+        -moz-filter: brightness(60%);
+        -o-filter: brightness(60%);
+        -ms-filter: brightness(60%);
+        filter: brightness(60%);
+        
+}
+    
+
+    .hack-container .btn-inimg {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+
+    
 </style>
 <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -128,7 +165,7 @@
                                     class="card-title">Turf XL</h5>
                             </div>
                             <ul style="margin:0;" class=" list-group list-group-flush">
-                                <li class="list-group-item">Oepn Hours: 11:00 AM - 8:00 PM</li>
+                                <li class="list-group-item">Open Hours: 11:00 AM - 8:00 PM</li>
                                 <li class="list-group-item">Rs.800 for 2 people</li>
                                 <li class="mb-4 list-group-item">ETA-5 mins from VIT Vellore</li>
                             </ul>
@@ -149,7 +186,7 @@
                                     class="card-title">Gamer's Paradise</h5>
                             </div>
                             <ul style="margin:0;" class=" list-group list-group-flush">
-                                <li class="list-group-item">Oepn Hours: 11:00 AM - 8:00 PM</li>
+                                <li class="list-group-item">Open Hours: 11:00 AM - 8:00 PM</li>
                                 <li class="list-group-item">Rs.600 for 2 people</li>
                                 <li class="mb-4 list-group-item">ETA-10 mins from VIT Vellore</li>
                             </ul>
@@ -170,7 +207,7 @@
                                     class="card-title">Tara Maa</h5>
                             </div>
                             <ul style="margin:0;" class=" list-group list-group-flush">
-                                <li class="list-group-item">Oepn Hours: 11:00 AM - 8:00 PM</li>
+                                <li class="list-group-item">Open Hours: 11:00 AM - 8:00 PM</li>
                                 <li class="list-group-item">Rs.500 for 2 people</li>
                                 <li class="mb-4 list-group-item">ETA-7 mins from VIT Vellore</li>
                             </ul>
@@ -323,17 +360,19 @@
     </div>
 </div>
 
-<!-- 
+
 <div class="section pt-1 pb-5">
     <div class="row justify-content-center">
         <h1 class="cursive h-color pt-5">Most Badass hackathons in VIT </h1>
     </div>
     <hr class="style-one">
-    <div class="row justify-content-center">
+    <div class="hack-container row justify-content-center">
         <div class="col-8   ">
-            <img style="width:100%;height:100%;" src="/images/hackathonposter.jpeg"> </div>
+            <div class="hack-img"></div>
+            <a href="/hackathons" class="btn-1 btn-inimg">Checkout <i class="ml-1 fas fa-arrow-circle-right"></i></a>
+        </div>
     </div>
-</div> -->
+</div>
 
 <div style=" background-color: rgba(10,10, 10, 0.1);
 background-blend-mode: lighten; background-image: url('images/contactus-4.jpg');background-repeat: no-repeat;
