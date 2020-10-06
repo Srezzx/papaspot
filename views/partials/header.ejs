@@ -21,6 +21,24 @@
 	<link rel="stylesheet" type="text/css" href="/Resources/Css/main.css" />
 	<link rel="stylesheet" href="/Resources/Css/gyms/gyms.css" />
 	<style>
+		@media all and (min-width: 992px) {
+			.navbar .nav-item .dropdown-menu {
+				display: none;
+			}
+
+			.navbar .nav-item:hover .nav-link {
+				color: #fff;
+			}
+
+			.navbar .nav-item:hover .dropdown-menu {
+				display: block;
+			}
+
+			.navbar .nav-item .dropdown-menu {
+				margin-top: 0;
+			}
+		}
+
 		body {
 			font-family: "Lato", "Arial", sans-serif !important;
 		}
@@ -189,17 +207,24 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-
-					<li class="nav-item">
-						<a class="nav-link" href="/restaurants">Restaurants <i class="fas fa-utensils"></i></a>
+					<li class="nav-item dropdown">
+						<a class="nav-link " href="#" data-toggle="dropdown">Nearby <i
+								class="fas fa-location-arrow"></i></a>
+						<ul style="background-color:rgba(0,27,66,0.9);" class="dropdown-menu">
+							<li> <a class="nav-link" href="/restaurants">Restaurants <i class="fas fa-utensils"></i></a>
+							</li>
+							<li><a class="nav-link" href="/hangouts">Hangouts <i class="fas fa-dice"></i>
+									<!--<i class="fa fa-headset"></i> --></a></li>
+							<li><a class="nav-link" href="/utilities">Utilities <i
+										class="fas fa-arrow-alt-circle-right"></i>
+									<!--  <i class="fa fa-mountain"></i>--></a></li>
+							<li><a class="nav-link" href="/shopping">Shopping <i class="fas fa-shopping-cart"></i>
+									<!--  <i class="fa fa-mountain"></i>--></a></li>
+						</ul>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/hangouts">Hangouts <i class="fas fa-dice"></i>
-							<!--<i class="fa fa-headset"></i> --></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/utilities">Utilities <i class="fas fa-arrow-alt-circle-right"></i>
-							<!--  <i class="fa fa-mountain"></i>--></a>
+					<li class="nav-item active">
+						<a class="nav-link" href="/lifehacks">Hack-a-thons <i class="fas fa-laptop"></i>
+						</a>
 					</li>
 					<li class="nav-item active">
 						<a class="nav-link" href="/lifehacks">Life-Hacks <i class="fas fa-heartbeat"></i>
