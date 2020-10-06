@@ -155,6 +155,7 @@ h4,
 h5,
 h6 {
     font-size: 180%;
+    text-align: center;
 }
 
 @media only screen and (max-width: 992px) {
@@ -189,6 +190,16 @@ h6 {
         font-size: 160%;
 
     }
+
+    h1.cursive,
+    h2.cursive,
+    h3.cursive,
+    h4.cursive,
+    h5.cursive,
+    h6.cursive {
+        font-size: 160%;
+    }
+
 
 
     p {
