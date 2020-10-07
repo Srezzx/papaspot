@@ -20,9 +20,12 @@
   "homepage": "https://github.com/Srezzx/Papaspot#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dompurify": "^2.1.1",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "jsdom": "^16.4.0",
+    "marked": "^1.2.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.10.0",
     "nodemailer": "^6.4.11",
@@ -30,6 +33,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
+    "slugify": "^1.4.5",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^9.17.1"
   }
