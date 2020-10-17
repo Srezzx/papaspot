@@ -41,8 +41,9 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 // 
 //mongoose.connect("mongodb://localhost/YelpCamp"); //-- for local database
-// const db = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/Papaspot";
-mongoose.connect("mongodb+srv://Srezz:E0Y550F4bZhiXLeX@cluster0-oshu0.mongodb.net/todolist?retryWrites=true&w=majority", {
+const db = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/Papaspot";
+// mongodb+srv://Srezz:E0Y550F4bZhiXLeX@cluster0-oshu0.mongodb.net/todolist?retryWrites=true&w=majority
+mongoose.connect(db, {
     useNewUrlParser: true,
     useCreateIndex: true
 }).then(() => {
