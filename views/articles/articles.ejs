@@ -149,6 +149,7 @@
             
             <div class="read-more">
               <a class="float-right" href="/articles/<%=article.slug%>">Read More</a>
+              <a href="/edit-articles/<%=article._id%>">Edit</a>
               <form action="/articles/<%=article._id%>" method="POST">
                 <button class="delete-button" type="submit">Delete</button>
               </form>
