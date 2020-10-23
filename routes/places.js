@@ -90,7 +90,9 @@ router.get("/utilities", function (req, res) {
     });
 });
 
-
+router.get("/financialaid",function(req,res){
+    res.render("financialaid");
+})
 
 
 module.exports = router;
