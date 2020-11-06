@@ -216,23 +216,23 @@
     });
 </script>
 
-<script>
-    $(document).ready(function () {
+// <script>
+//     $(document).ready(function () {
 
-        $("#myInput").on("keyup", function () {
-            var x = 0;
-            var value = $(this).val().toLowerCase();
-            $(' div.areatosearch').css("display", "none");
-            var y = -1;
-            $("div.areatosearch").filter(function (e, f, g) {
-                y++;
-                return $(this).text().toLowerCase().indexOf(value) > -1;
-            }).show();
-            if (x === 0) {
-                //put result when no search is matched
-            }
-        })
-    });
-</script>
+//         $("#myInput").on("keyup", function () {
+//             var x = 0;
+//             var value = $(this).val().toLowerCase();
+//             $(' div.areatosearch').css("display", "none");
+//             var y = -1;
+//             $("div.areatosearch").filter(function (e, f, g) {
+//                 y++;
+//                 return $(this).text().toLowerCase().indexOf(value) > -1;
+//             }).show();
+//             if (x === 0) {
+//                 //put result when no search is matched
+//             }
+//         })
+//     });
+// </script>
 
 <%- include("partials/footer"); %>
