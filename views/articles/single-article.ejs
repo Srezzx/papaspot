@@ -1,115 +1,133 @@
 <%- include("../partials/header"); %>
 
 <style>
-  @import url(https://fonts.googleapis.com/css?family=Roboto:100,300);
-  @import url('https://fonts.googleapis.com/css2?family=Piazzolla&display=swap');
+    @import url(https://fonts.googleapis.com/css?family=Roboto:100,300);
+    @import url("https://fonts.googleapis.com/css2?family=Piazzolla&display=swap");
 
-*, *:before, *:after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+    *,
+    *:before,
+    *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-html, body {
-	width: 100%;
-	height: 100%;
-	font-family: 'Roboto', sans-serif;
-}
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        font-family: "Roboto", sans-serif;
+    }
 
-.intro {
-	position: relative;
-	height: auto;
-	transform: translateZ(0);
-	/* background-image: linear-gradient(35deg, #ffff, #ffff); */
-}
+    .intro {
+        position: relative;
+        height: auto;
+        transform: translateZ(0);
+        /* background-image: linear-gradient(35deg, #ffff, #ffff); */
+    }
 
-.intro img {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: auto;
-  max-height: 500px;
-	z-index: 1;
-	mix-blend-mode: multiply;
-}
+    .intro img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        z-index: 1;
+        mix-blend-mode: multiply;
+    }
 
-.intro .caption {
-	position: absolute;
-	bottom: 25%;
-	left: 0;
-	width: 100%;
-	text-align: center;
-	z-index: 3;
-	color: white;
-}
+    .intro .caption {
+        position: absolute;
+        bottom: 25%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 3;
+        color: white;
+    }
 
-.intro .caption h1 {
-	display: inline-block;
-	width: 70%;
-	font-size: 6vw;
-	font-weight: 100;
-}
+    .intro .caption h1 {
+        display: inline-block;
+        width: 70%;
+        font-size: 6vw;
+        font-weight: 100;
+    }
 
-.intro .overlay {
-	position: absolute;
-	bottom: -2px;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 2;
-	pointer-events: none;
-}
+    .intro .overlay {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+    }
 
-.intro .overlay svg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
+    .intro .overlay svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-.copy {
-	width: 100%;
-	max-width: 60rem;
-	height: 200%;
-	margin: 0 auto;
-	padding: 10vw 5vw 0 5vw;
-    margin-bottom: 2rem;
-}
+    .copy {
+        width: 100%;
+        max-width: 60rem;
+        height: 200%;
+        margin: 0 auto;
+        padding: 10vw 5vw 0 5vw;
+        margin-bottom: 2rem;
+    }
 
-.copy h1, h2, h3, h4, h5, h6 {
-    color: #476d80;
-    font-weight: 300;
-}
+    .copy h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #476d80;
+        font-weight: 300;
+    }
 
-.copy p {
-	margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    font-family: 'Piazzolla', serif;
-}
+    .copy p {
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        font-family: "Piazzolla", serif;
+    }
 
-.copy .teaser {
-	font-size: 1.6rem;
-	text-align: center;
-}
+    .copy .teaser {
+        font-size: 1.6rem;
+        text-align: center;
+    }
 </style>
 
 <figure class="intro">
-  <img src="<%=article.imageUrl%>" alt="" />
-  <figcaption class="caption">
-    <h1><%= article.title %></h1>
-  </figcaption>
-  <span class="overlay">
-<svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 500 250" enable-background="new 0 0 500 250" xml:space="preserve" PreserveAspectRatio="none">
-<path fill="#FFFFFF" d="M250,246.5c-97.85,0-186.344-40.044-250-104.633V250h500V141.867C436.344,206.456,347.85,246.5,250,246.5z"
-	/>
-</svg>
-  </span>
+    <img src="<%=article.imageUrl%>" alt="" />
+    <figcaption class="caption">
+        <h1><%= article.title %></h1>
+    </figcaption>
+    <span class="overlay">
+        <svg
+            version="1.1"
+            id="circle"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 500 250"
+            enable-background="new 0 0 500 250"
+            xml:space="preserve"
+            PreserveAspectRatio="none"
+        >
+            <path
+                fill="#FFFFFF"
+                d="M250,246.5c-97.85,0-186.344-40.044-250-104.633V250h500V141.867C436.344,206.456,347.85,246.5,250,246.5z"
+            />
+        </svg>
+    </span>
 </figure>
-<div class="copy">
-  <%-article.sanitizedHtml%>
-</div>
+<div class="copy"><%-article.sanitizedHtml%></div>
 
 <!-- <div class="container">
   <div class="title">
@@ -125,23 +143,24 @@ html, body {
 </div> -->
 
 <script>
-  /*
+    /*
 found this function here 
 http://stackoverflow.com/a/26831113
 */
 
-function inViewport($el) {
-    var H = $(window).height(),
-        r = $el[0].getBoundingClientRect(), t=r.top, b=r.bottom;
-    return Math.max(0, t>0? H-t : (b<H?b:H));  
-}
+    function inViewport($el) {
+        var H = $(window).height(),
+            r = $el[0].getBoundingClientRect(),
+            t = r.top,
+            b = r.bottom;
+        return Math.max(0, t > 0 ? H - t : b < H ? b : H);
+    }
 
-$(window).on("scroll resize", function(){
-  var window_offset = inViewport($('.intro')); 
-  $(".overlay").height(window_offset);
-  $(".caption").css("bottom", (window_offset / 4) );
-});
-
+    $(window).on("scroll resize", function () {
+        var window_offset = inViewport($(".intro"));
+        $(".overlay").height(window_offset);
+        $(".caption").css("bottom", window_offset / 4);
+    });
 </script>
 
 <%- include("../partials/footer"); %>

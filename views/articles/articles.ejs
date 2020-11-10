@@ -1,164 +1,217 @@
 <%- include("../partials/header"); %>
 
 <style>
-  @import url("https://fonts.googleapis.com/css?family=Montserrat");
-  @import url("https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+    @import url("https://fonts.googleapis.com/css?family=Montserrat");
+    @import url("https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
-  body {
-    background-color: #f7f7f7;
-    width: 100%;
-    overflow-x: hidden;
-  }
+    body {
+        background-color: #f7f7f7;
+        width: 100%;
+        overflow-x: hidden;
+    }
 
-  .title {
-    font-family: "Montserrat";
-    text-align: center;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 1px;
-  }
+    .title {
+        font-family: "Montserrat";
+        text-align: center;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 1px;
+    }
 
-  h1 {
-    background-image: url("/images/fire-2.gif");
-    background-size: cover;
-    color: transparent;
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
-    text-transform: uppercase;
-    font-size: 3rem;
-  }
+    h1 {
+        background-image: url("/images/fire-2.gif");
+        background-size: cover;
+        color: transparent;
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
+        text-transform: uppercase;
+        font-size: 3rem;
+    }
 
-  .single-article {
-    position: relative;
-    margin-bottom: 12rem;
+    .single-article {
+        position: relative;
+        margin-bottom: 14rem;
+    }
+
+    .article-image img {
+        height: 350px;
+        width: 100%;
+        -webkit-box-shadow: 10px 10px 18px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 18px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 18px -5px rgba(0, 0, 0, 0.75);
+    }
+
+    .content {
+        width: 70%;
+        z-index: 5;
+        position: absolute;
+        top: 12rem;
+        left: 5.4rem;
+        background: rgb(0, 27, 66, 0.85);
+        padding: 4rem 3rem;
+        color: white;
+        -webkit-box-shadow: 10px 10px 18px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 18px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 18px -5px rgba(0, 0, 0, 0.75);
+        border-radius: 50%;
+    }
+
+    .content .title {
+        font-size: 0.8rem;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        color: rgb(245, 94, 83);
+        text-align: center;
+    }
+
+    .content .description {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+
+    .content .read-more {
+        display: flex;
+        margin-top: 1rem;
+        text-decoration: none;
+        color: rgb(245, 94, 83);
+        font-family: "Markazi Text", sans-serif;
+        font-size: 1.2rem;
+        justify-content: space-around;
+    }
+
+    .read-more a {
+        text-decoration: none;
+        color: rgb(245, 94, 83);
+        font-family: "Markazi Text", sans-serif;
+        font-size: 1.2rem;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .read-more a::after {
+        content: "»";
+        position: absolute;
+        opacity: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .read-more a:hover {
+        padding-right: 24px;
+        padding-left: 8px;
+    }
+
+    .read-more a:hover::after {
+        opacity: 1;
+        right: 10px;
+    }
+
+    .delete-button {
+        background: transparent;
+        text-decoration: none;
+        color: rgb(245, 94, 83);
+        font-family: "Markazi Text", sans-serif;
+        font-size: 1.2rem;
+        border: none;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .title h1 {
+            font-size: 1.5rem;
+        }
+
+        .article-image img {
+            height: 250px;
+            width: 100%;
+        }
+
+        .col-md-6 {
+            padding: 0;
+        }
+
+        .col-xs-12 {
+            padding: 0;
+        }
+
+        .content {
+            width: 100%;
+            z-index: 5;
+            top: 8rem;
+            left: 0;
+            background: rgb(0, 27, 66, 0.85);
+            padding: 3rem;
+            color: white;
+            -webkit-box-shadow: 10px 10px 18px -5px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 10px 10px 18px -5px rgba(0, 0, 0, 0.75);
+            box-shadow: 10px 10px 18px -5px rgba(0, 0, 0, 0.75);
+        }
+
+        .content .title {
+            font-size: 0.7rem;
+        }
+
+        .description {
+            font-size: 0.5rem;
+        }
+
+        .single-article {
+            margin-bottom: 12rem;
+        }
+    }
+
+    @media only screen and (max-width: 350px) {
+        .single-article {
+            margin-bottom: 14rem;
+        }
+    }
     
-  }
-
-  .article-image img {
-    height: 350px;
-    width: 100%;
-    -webkit-box-shadow: 10px 10px 18px -5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 18px -5px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 18px -5px rgba(0,0,0,0.75);
-  }
-
-  .content {
-    width: 70%;
-    z-index: 5;
-    position: absolute;
-    bottom: -10rem;
-    left: 5.4rem;
-    background: rgb(0, 27, 66, 0.85);
-    padding: 4rem 3rem;
-    color: white;
-    -webkit-box-shadow: 10px 10px 18px -5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 18px -5px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 18px -5px rgba(0,0,0,0.75);
-    border-radius: 50%;
-  }
-
-  .content .title {
-    font-size: 0.8rem;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    color: rgb(245, 94, 83);
-    text-align: center;
-  }
-
-  .content .description {
-    text-align: center;
-    margin: 10px 0;
-    font-size: 1rem;
-  }
-
-  .content .read-more {
-    display: flex;
-    margin-top: 1rem;
-    text-decoration: none;
-    color: rgb(245, 94, 83);
-    font-family: "Markazi Text", sans-serif;
-    font-size: 1.2rem;
-    justify-content: space-around;
-  }
-
-  .read-more a {
-    text-decoration: none;
-    color: rgb(245, 94, 83);
-    font-family: "Markazi Text", sans-serif;
-    font-size: 1.2rem;
-    position: relative;
-    transition: .5s;
-  }
-
-  .read-more a::after {
-    content: '»';
-    position: absolute;
-    opacity: 0;  
-    right: -20px;
-    transition: 0.5s;
-  }
-
-  .read-more a:hover {
-    padding-right: 24px;
-    padding-left:8px;
-  }
-
-  .read-more a:hover::after {
-    opacity: 1;
-    right: 10px;
-  }
-
-
-
-  .delete-button {
-    background: transparent;
-    text-decoration: none;
-    color: rgb(245, 94, 83);
-    font-family: "Markazi Text", sans-serif;
-    font-size: 1.2rem;
-    border: none;
-  }
-
-
 </style>
 
 <div class="container" style="margin-top: 5rem">
-  <div class="title">
-    <h1>Build Your Skills Right!</h1>
-  </div>
-  <hr class="style-one">
-  <div class="row">
-    <% articles.forEach(article => { %>
-    <div class="col-md-6">
-      <div class="row">
-        <div class="col-xs-12 px-3 single-article">
-          <div class="article-image">
-            <img src="<%=article.imageUrl %>" alt="" />
-          </div>
-          <div class="content">
-            <div class="title">
-              <h4><%= article.title %></h4>
-            </div>
-            <div class="description">
-              <%=article.desc %>
-            </div>
-            
-            <div class="read-more">
-              <a class="float-right" href="/articles/<%=article.slug%>">Read More</a>
-              <a href="/edit-articles/<%=article._id%>">Edit</a>
-              <form action="/articles/<%=article._id%>" method="POST">
-                <button class="delete-button" type="submit">Delete</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="title">
+        <h1>Build Your Skills Right!</h1>
     </div>
-    <% }) %> 
-  </div>
+    <hr class="style-one" />
+    <div class="row">
+        <% articles.forEach(article => { %>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-xs-12 px-3 single-article">
+                    <div class="article-image">
+                        <img src="<%=article.imageUrl %>" alt="" />
+                    </div>
+                    <div class="content">
+                        <div class="title">
+                            <h4><%= article.title %></h4>
+                        </div>
+                        <div class="description"><%=article.desc %></div>
+
+                        <div class="read-more">
+                            <a
+                                class="float-right"
+                                href="/articles/<%=article.slug%>"
+                                >Read More</a
+                            >
+                            <a href="/edit-articles/<%=article._id%>">Edit</a>
+                            <form
+                                action="/articles/<%=article._id%>"
+                                method="POST"
+                            >
+                                <button class="delete-button" type="submit">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
 </div>
 <%- include("../partials/footer"); %>
