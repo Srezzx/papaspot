@@ -20,17 +20,20 @@ var Comments = require("./models/comments");
 var userEntry = require("./models/userentry");
 var faq = require("./models/faq");
 
+
 //ROUTES
 var adminRoutes = require("./routes/admin");
 var faqRoutes = require("./routes/faq");
 var staticRoutes = require("./routes/static");
 var placesRoutes = require("./routes/places");
 var articlesRoutes = require("./routes/articles");
+var appRoutes = require("./routes/appAPI");
 app.use(adminRoutes);
 app.use(faqRoutes);
 app.use(staticRoutes);
 app.use(placesRoutes);
 app.use(articlesRoutes);
+app.use(appRoutes);
 
 
 app.use(express.static(__dirname + "/public"));
