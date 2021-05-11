@@ -15,7 +15,7 @@ var Articles = require("../models/articles");
 
 router.get("/atlas/app/places/restaurants", async (req,res) =>{
     console.log(req.body);
-    var places = await Places.find({type:"restaurant"});
+    var places = await Places.find({type:"restaurant"}).populate("comments");
     try
     {
         return res.json({msg:"Success", places:places, error:"No error found"});
@@ -28,7 +28,7 @@ router.get("/atlas/app/places/restaurants", async (req,res) =>{
 
 router.get("/atlas/app/places/utilities", async (req,res) =>{
     console.log(req.body);
-    var places = await Places.find({type:"utilities"});
+    var places = await Places.find({type:"utilities"}).populate("comments");
     try
     {
         return res.json({msg:"Success", places:places, error:"No error found"});
@@ -41,7 +41,7 @@ router.get("/atlas/app/places/utilities", async (req,res) =>{
 
 router.get("/atlas/app/places/hangouts", async (req,res) =>{
     console.log(req.body);
-    var places = await Places.find({type:"hangouts"});
+    var places = await Places.find({type:"hangouts"}).populate("comments");
     try
     {
         return res.json({msg:"Success", places:places, error:"No error found"});
